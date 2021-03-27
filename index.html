@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gifos - Home</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.min.css">
+    
+</head>
+<body>
+    <header>
+        <!-- LOGO -->
+        <div id="logos">
+            <a href="/Index.html"><img class="logo_desktop" src="/assests/logo-desktop-01.png" alt="Gifos logo Desktop"></a>
+            <a href="/Index.html"><img class="logo_mobile" src="/assests/logo-mobile.png" alt="Gifos logo Mobile"></a>
+            <a href="/Index.html"><img class="logo_desktop_dark" src="/assests/Logo-modo-noc-01.png" alt="Gifos logo Dark Mode Desktop"></a>
+            <a href="/Index.html"><img class="logo_mobile_dark" src="/assests/logo-mobile-modo-noct-01.png" alt="Gifos logo Dark Mode Mobile"></a>
+        </div>
+        <!-- HAMBURGUER MENU  -->
+        <div id="hamburger_menu"></div>
+        <!-- NAV MENU -->
+        <nav id="menu_mobile">
+            <ul>
+                <li id="darkmode" class="darkmode">Modo Nocturno</li><hr id="burger_menu_border">
+                <li><a href="/favoritos.html">Favoritos</a></li>
+                <li><a href="/misgifos.html">Mis Gifos</a></li>
+                <li class="cta"><a class="plus_button" href="/crear.html"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="search">
+        <h1>Inspírate, busca, guarda, y crea los mejores <span>GIFOS</span></h1>
+    
+        <img class="main_img" src="/assests/ilustra_header.svg" alt="saludo header">
+        <form class="search_gifos">
+            <input type="text" placeholder="Busca Gifos y más">
+            <div id="search_button" class="search"></div>
+        </form>
+        <div class="trending_text">
+            <h3>Trending:</h3>
+            <p>Reactions, Entertainment, Sports, Stickers, Artists</p>
+        </div>
+    </section>
+    <section id="results">
+        <hr>
+        <h2 id="search_text">Mascotas</h2>
+        <div id="no_result">
+            <img src="/assests/icon-busqueda-sin-resultado.svg" alt="">
+            <p>Intenta con otra búsqueda.</p>
+        </div>
+        <div id="search_result">
+            <div class="gif">caja</div>
+            <div class="gif">caja</div>
+            <div class="gif">caja</div>
+            <div class="gif">caja</div>
+            <div class="gif">caja</div>
+            <div class="gif">caja</div>
+            <div class="gif">caja</div>
+            <div class="gif">caja</div>
+            <div class="gif">caja</div>
+            <div class="gif">caja</div>
+            <div class="gif">caja</div>
+            <div class="gif">caja</div>
+        </div>
+        <div class="button_ver_mas"><a href="#">VER MÁS</a></div>
+    </section>
+    <section id="trending">
+        <h2>Trending GIFOS</h2>
+        <p>Mira los últimos GIFOS de nuestra comunidad.</p>
+        <div id="trending_gifs"></div>
+    </section>
+    <footer>
+        <p>Compartir en:</p>
+        <div class="social_network">
+            <a href="https://www.facebook.com/" target="_blank" class="fab fa-facebook-f"></a>
+            <a href="https://twitter.com/?lang=es" target="_blank" class="fab fa-twitter"></a>
+            <a href="https://www.instagram.com/" target="_blank" class="fab fa-instagram"></a>
+        </div>
+        <p class="rights">© GIFOS 2020 All Rights Reserved.</p>
+    </footer>
+    <script src="./js/darkmode.js"></script>
+    <script src="./js/menu.js"></script>
+</body>
+</html>

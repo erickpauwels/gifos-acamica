@@ -1,0 +1,198 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: $border;
+    padding: 24px;
+        body.dark & {
+            border-top: $border_dark_mode ;
+        }
+//----------------- LOGO --------------------------------//
+    #logos {
+        .logo_desktop, .logo_desktop_dark, .logo_mobile_dark { 
+            display: none; 
+        }
+        body.dark & {
+            .logo_mobile {display: none;}
+            .logo_mobile_dark {display: block;}
+        }
+    }
+    &.sticky_menu{
+        position: sticky;
+        top: 0px;
+        display:flex;
+        background: $clear;
+        body.dark & {
+            background: $darkmode;
+        }
+    }
+    }
+// ---------------------NAV BAR -----------------------------------//
+    nav{
+        display: none;  //Activar con burger
+        &.menu_active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        background: $nav_mobile;
+        top: 97px;
+        z-index: 1;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        body.dark & {
+            background: $nav_dark_mode;
+        }
+        ul{ 
+            width: 100%;
+            #burger_menu_border {
+                border: 0;
+                width: 85px;  
+                margin: 0 auto;
+                height: 1px;   
+                background-color: rgba(255,255,255, 0.5);  
+                              }
+            li{
+                @extend %font-nav;
+                margin-top: 10px;
+                color: $clear;
+                line-height: 60px;
+                font-size: 15px;
+                text-align: center;
+                list-style: none;
+                .cta {display: none;}
+                    a{
+                    color:$clear;
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid rgba(255,255,255, 0.5);
+                    }
+                }
+            }
+        }
+        
+    }
+    
+//-------------------- HAMBURGUER MENU ------------------------ //
+
+    #hamburger_menu {
+        background-image: url(/assests/burger.svg);
+        background-repeat: no-repeat;
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+        body.dark & {
+            background-image: url(/assests/burger-modo-noct.svg);
+        }
+        &.hamburguer_active {
+            background-image: url(../assests/close.svg);
+            body.dark & {
+                background-image: url(/assests/close-modo-noct.svg);
+            }
+        }
+    }
+ 
+
+//----------------------------------------------------------------------------//
+// ----------------------- MEDIA QUERY DESKTOP ------------------------------//
+// -------------------------------------------------------------------------//
+@include tablets{
+    header nav ul {
+        #darkmode {
+            font-size: 18px;
+        }
+    }
+    
+    li a{
+            font-size: 18px;       
+    }
+}
+
+@include desktop{
+    header {
+        #logos {
+            .logo_mobile {display: none;}
+            .logo_desktop {display: block;}
+            body.dark & {
+                .logo_desktop, .logo_mobile_dark {display: none;}
+                .logo_desktop_dark {display: block;}
+            }
+        }
+        nav {
+            margin: 0;
+            height: auto;
+            display: block;
+            ul{ 
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                margin-right: 20px;
+                text-decoration: none;
+                background: transparent;
+                #darkmode {
+                    font-size: 14px;
+                }
+                #burger_menu_border{
+                    display: none;
+                }
+                li{
+                    margin: 20px;
+                    font-family: $montserrat;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    font-size: 14px;
+                    color: $main;
+                    line-height: 23px;
+                    list-style: none;
+                    cursor: pointer;
+                    &:hover{
+                    text-decoration:underline solid 3px $secondary;
+                    }
+                    a{  
+                        font-size: 14px;
+                        color: $main;
+                        &:hover {
+                            text-decoration:underline solid 3px $secondary;
+                        &:active{
+                            color: $active;
+                             }
+                        }
+                     
+                    }
+                }
+            }
+        }
+        #hamburger_menu {
+            display: none;
+        }
+    }
+
+//-------------------------- CREAR GIF BUTTON ------------------------//
+.cta {
+    display: flex;
+    .plus_button {
+        display: flex;
+        background-image: url(/assests/button-crear-gifo.svg);
+        background-repeat: no-repeat;
+        width: 54px;
+        height: 54px;
+        &:hover {
+            background-image: url(/assests/CTA-crear-gifo-hover.svg);
+        }
+        &:active {
+            background-image: url(/assests/CTA-crear-gifo-active.svg);
+        }
+        body.dark &{
+            background-image: url(/assests/CTA-crear-gifo-modo-noc.svg);
+           &:hover {
+               background-image: url(/assests/CTA-crear-gifo-hover-modo-noc.svg);
+           } 
+           &:active {
+               background-image: url(/assests/CTA-crear-gifo-active-modo-noc.svg);
+           }
+        }
+    }
+}
+}

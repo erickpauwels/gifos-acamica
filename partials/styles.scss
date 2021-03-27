@@ -1,0 +1,27 @@
+// usar object -fit  para los cuadros de las imaganes asi no se descuedran 
+//" ver mas" usarlo como boton
+/*@function rem($size) {
+    @return $size / 16px * 1rem;
+  }
+
+Propiedades con CSS para mobile, estas van aplicadas al contenedor Trending Gifos de los gifs que quieren mostrar:
+overflow-x: scroll;
+scroll-snap-type: x mandatory;
+Con esto pueden deslizar los gifs haciendo scroll con el touch  */
+
+// Generales
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/helpers';
+
+// Especificos 
+@import 'partials/main';
+@import 'partials/header';
+@import 'partials/search';
+@import 'partials/results';
+@import 'partials/favoritos';
+@import 'partials/misGifos';
+@import 'partials/gifoMax';
+@import 'partials/trending';
+@import 'partials/footer';
+@import 'partials/crear';

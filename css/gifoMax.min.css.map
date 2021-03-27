@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../partials/gifoMax.scss"
+    ],
+    "names": [],
+    "file": "gifoMax.min.css"
+}

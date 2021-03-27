@@ -1,0 +1,116 @@
+
+//------------------------SEARCH SECTION--------------------------------//
+ 
+ #search {
+     display: flex;
+     flex-direction:column;
+     align-items: center;
+     h1 {
+        @extend %font-h1;
+        color: $main;
+        font-size: 25px;
+        width: 76%;
+        max-width: 450px;
+        margin-bottom:31px;
+        body.dark & {
+            color:$clear;
+        }
+     }
+     .main_img {
+         width: 72.8%;
+         height: 5.5%;
+         max-width: 399px;
+         max-height: 190px;
+     }
+     .search_gifos {
+        display: flex;
+         width: 90%;
+         max-width: 551px;
+         height: 50px;
+         border: 1px solid $main;
+         border-radius: 27px;
+         padding:5px 20px 5px 55px;
+         justify-content: space-between;
+         align-items: center;
+         margin-bottom: 31px;
+         body.dark & {
+            border: 1px solid $clear;
+        }
+                input{
+                    @extend %font-text-black;
+                    width: 85%;
+                    text-align: start;
+                    border: none;
+                    background: transparent;
+                    &:focus{
+                        outline: none;
+                    }
+                    body.dark & {
+                        color:$clear;
+                    }
+                }
+                #search_button {
+                    width: 20px;
+                    height: 20px;
+                    cursor: pointer;
+                    background-image: url(/assests/icon-search.svg);
+                    background-repeat: no-repeat;
+                    body.dark & {
+                        background-image: url(/assests/icon-search-mod-noc.svg);
+                    }
+                    // falta cambiar img por blanca 
+                }
+     } 
+     .trending_text {
+         width: 50%;
+         text-align: center;
+         color: $main;
+         h3 {
+            @extend %font-h1;
+            color: $main;
+            font-size: 16px;
+         }
+         p{
+             @extend %paragraph;
+             margin-bottom: 40px;
+         }
+     }
+ }
+
+//----------------------------------------------------------------------------//
+// ----------------------- MEDIA QUERY DESKTOP ------------------------------//
+// -------------------------------------------------------------------------//
+
+@include tablets {
+    #search{
+        .search_gifos{
+            body.dark & {
+                border: 1px solid $clear;
+            }
+            input{
+                margin-left: 0px;
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+        .trending_text{
+            h3{
+                font-size:18px;
+            }
+            p{
+                font-size: 16px;
+            }
+        }
+    }
+    
+}
+
+@include desktop {
+    #search{
+        h1{
+            font-size: 2rem;
+        }
+    }
+    
+}

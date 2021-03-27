@@ -1,0 +1,43 @@
+#favoritos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img{
+        margin-top: 5px;
+        margin-bottom: 7px;
+    }
+    h1 {
+        @extend %font-h1;
+        color: $main;
+        margin-bottom: 46px;
+    }
+    #favoritos_container {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+
+        width: 100%;
+        .favorite_gif{
+            margin-bottom: 25px;
+            width: 156px;
+            height: 120px;
+            background: $secondary;
+        }
+    }
+    .button_ver_mas {
+        @extend %button_ver_mas;
+    }
+}
+
+// media querys
+
+@include desktop{
+    #burger {
+        display: none;
+    }
+}
+#logo a img{
+    width: 63px;
+    height: 60px;
+}

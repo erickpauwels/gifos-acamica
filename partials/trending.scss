@@ -1,0 +1,40 @@
+#trending{
+    background: #F3F5F8;
+    body.dark & {
+        background: $trending_dark_mode;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2{
+        margin-top: 46px;
+        @extend %font-h1;
+        color: $main;
+    }
+    p {
+        margin-top: 7px;
+        @extend %font-text-black;
+        width: 55%;
+    }
+    #trending_gifs {
+        margin-top: 32px;
+        height: 187px;
+        width: 243px;
+        background: $secondary;
+        margin-bottom: 82px;
+    }
+
+}
+
+//  Media querys
+@include tablets {
+    #trending {
+        h2 {
+            font-size: 25px;
+        }
+        p {
+            font-size: 18px;
+        }
+        // HACER TRENDING 3 CAJAS EN UN DIV + FLECHAS
+    }
+}

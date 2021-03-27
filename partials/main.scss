@@ -1,0 +1,36 @@
+
+// ------------ MAIN STYLES ----------------- //
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    span{
+        color:$secondary;
+    }
+}
+
+// ------ DARK MODE STYLES--------------- //
+
+body {
+    transition: .3s ease all;
+    &.dark {
+        background: $darkmode;
+        transition: .3s ease all;
+        #search{    
+            h1, h3, p { color: $clear;}
+        }
+        #trending {
+            h2, p {color: $clear;}
+        }
+        #mis_gifos{
+            h1 {color: $clear;}
+        }
+        #favoritos{
+            h1 {color: $clear;}
+        }
+        p, li, a {color: $clear;}
+    }
+}
+
+// ----------------------------------------

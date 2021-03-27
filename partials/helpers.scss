@@ -1,0 +1,66 @@
+// ------------------------ Fonts -------------------------------//
+
+%font-h1{
+    font-family: $montserrat;
+    font-weight: 700;
+    font-size: 20px;
+    font-style: bold;
+    text-align: center;
+    line-height: 33px;
+}
+
+%font-text-black {
+    font-family: $roboto;
+    font-size: 16px;
+    color: #000000;
+    line-height: 20px;
+    text-align: center;
+    font-weight: 400;
+}
+
+%paragraph {
+    font-family: $montserrat;
+    font-weight: 500;
+    font-size: 14px;
+    color: $main;
+    text-align: center;
+    line-height: 25px;
+}
+
+%font-nav {
+    font-family: $montserrat;
+    font-weight: 600;
+    font-size: 14px;
+    color: $main;
+    line-height: 23px;
+}
+
+//-------------------------- button ----------------------------- //
+
+%button_ver_mas{
+    margin: 74px; 
+    a{
+        border: 1px solid $main;
+        width: 127px;    
+        border-radius: 25px;
+        padding: 18px 32px;
+        @extend %font-h1;
+        font-weight: 700; 
+        font-size: 13px;
+        color: $main;
+        background: white;
+        &:hover {
+            background: $main;
+            color: white;
+        }
+        body.dark &{
+            background: transparent;
+            color: $clear;
+            border-color: $clear;
+            &:hover {
+             background-color: $clear;
+             color: $darkmode;   
+            }
+        }
+    }
+}

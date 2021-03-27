@@ -1,0 +1,30 @@
+#mis_gifos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img{
+        margin-top: 5px;
+        margin-bottom: 7px;
+    }
+    h1 {
+        @extend %font-h1;
+        color: $main;
+        margin-bottom: 46px;
+    }
+    #my_gif_container {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        width: 100%;
+        .mi_gif{
+            margin-bottom: 25px;
+            width: 156px;
+            height: 120px;
+            background: $secondary;
+        }
+    }
+    .button_ver_mas{
+        @extend %button_ver_mas;
+    }
+}
