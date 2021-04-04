@@ -17,19 +17,6 @@
             color: $clear;
         }
     }
-    #search_result {
-        text-align: center;
-        width: 100%;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-        .gif{
-            margin-bottom: 25px;
-            background: $secondary;
-            width: 156px;
-            height: 120px;
-        }
-    }
     .button_ver_mas {
         @extend %button_ver_mas;
     }
@@ -53,7 +40,27 @@
     }
 }
 
-//  Media querys
+.search_result {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid black;
+    box-shadow: 2px 2px 20px 2px black;
+    object-fit: contain;
+    width: 100px;
+    height: 100px;
+    img {
+        width: 50px;
+        height: 80px;
+        object-fit: cover;
+    }
+    h2 {
+        font-size: 25px;
+    }
+}
+
+// ---------------- Media querys----------------------//
+
 @include tablets {
    #results{
        #search_result {

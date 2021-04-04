@@ -1,7 +1,7 @@
 #trending{
     background: #F3F5F8;
     body.dark & {
-        background: $trending_dark_mode;
+        background-color: $trending_dark_mode;
     }
     display: flex;
     flex-direction: column;

@@ -1,4 +1,4 @@
-//-----------------------VARIABLES ---------------
+//-----------------------VARIABLES HAMBURGUER MENU ---------------
 const burger = document.getElementById('hamburger_menu');
 const menuMobile = document.getElementById('menu_mobile');
 const sticky_nav = document.querySelector('header');

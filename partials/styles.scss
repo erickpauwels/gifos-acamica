@@ -10,18 +10,18 @@ scroll-snap-type: x mandatory;
 Con esto pueden deslizar los gifs haciendo scroll con el touch  */
 
 // Generales
-@import 'partials/variables';
-@import 'partials/mixins';
-@import 'partials/helpers';
+@import '/partials/variables.scss';
+@import '/partials/mixins.scss';
+@import '/partials/helpers.scss';
 
 // Especificos 
-@import 'partials/main';
-@import 'partials/header';
-@import 'partials/search';
-@import 'partials/results';
-@import 'partials/favoritos';
-@import 'partials/misGifos';
-@import 'partials/gifoMax';
-@import 'partials/trending';
-@import 'partials/footer';
-@import 'partials/crear';
+@import '/partials/main.scss';
+@import '/partials/header.scss';
+@import '/partials/search.scss';
+@import '/partials/results.scss';
+@import '/partials/favoritos.scss';
+@import '/partials/misGifos.scss';
+@import '/partials/gifoMax.scss';
+@import '/partials/trending.scss';
+@import '/partials/crear.scss';
+@import '/partials/footer.scss';

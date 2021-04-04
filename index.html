@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="/css/styles.min.css">
     
 </head>
 <body>
@@ -34,12 +34,15 @@
     </header>
     <section id="search">
         <h1>Inspírate, busca, guarda, y crea los mejores <span>GIFOS</span></h1>
-    
         <img class="main_img" src="/assests/ilustra_header.svg" alt="saludo header">
+        <!-- SEARCH GIFS  -->
         <form class="search_gifos">
-            <input type="text" placeholder="Busca Gifos y más">
-            <div id="search_button" class="search"></div>
+            <input id="search_input" type="text" placeholder="Busca Gifos y más">
+            <button id="search_button" class="search"></button>
         </form>
+        <!-- SUGGESTION LIST -->
+        <ul id="suggestion_list"></ul>
+        <!-- TRENDING SUGGESTIONS -->
         <div class="trending_text">
             <h3>Trending:</h3>
             <p>Reactions, Entertainment, Sports, Stickers, Artists</p>
@@ -52,20 +55,7 @@
             <img src="/assests/icon-busqueda-sin-resultado.svg" alt="">
             <p>Intenta con otra búsqueda.</p>
         </div>
-        <div id="search_result">
-            <div class="gif">caja</div>
-            <div class="gif">caja</div>
-            <div class="gif">caja</div>
-            <div class="gif">caja</div>
-            <div class="gif">caja</div>
-            <div class="gif">caja</div>
-            <div class="gif">caja</div>
-            <div class="gif">caja</div>
-            <div class="gif">caja</div>
-            <div class="gif">caja</div>
-            <div class="gif">caja</div>
-            <div class="gif">caja</div>
-        </div>
+        <div id="search_result"></div>
         <div class="button_ver_mas"><a href="#">VER MÁS</a></div>
     </section>
     <section id="trending">
@@ -82,7 +72,10 @@
         </div>
         <p class="rights">© GIFOS 2020 All Rights Reserved.</p>
     </footer>
+    <script src="./js/variables.js"></script>
     <script src="./js/darkmode.js"></script>
+    <script src="./js/search.js"></script>
     <script src="./js/menu.js"></script>
+    <script src="./js/suggestions.js"></script>
 </body>
 </html>
