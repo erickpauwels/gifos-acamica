@@ -19,8 +19,8 @@
      .main_img {
          width: 72.8%;
          height: 5.5%;
-         max-width: 399px;
-         max-height: 190px;
+         max-width: 400px;
+         max-height: 200px;
      }
      .search_gifos {
         display: flex;
@@ -41,9 +41,12 @@
                     width: 85%;
                     text-align: start;
                     border: none;
-                    background: transparent;
+                    background-color: transparent;
+                    box-shadow: none;
                     &:focus{
                         outline: none;
+                        background-color: transparent;
+                        box-shadow: none;
                     }
                     body.dark & {
                         color:$clear;
@@ -53,12 +56,14 @@
                     width: 20px;
                     height: 20px;
                     cursor: pointer;
+                    border: none;
+                    background: none;
+                    outline: none;
                     background-image: url(/assests/icon-search.svg);
                     background-repeat: no-repeat;
                     body.dark & {
                         background-image: url(/assests/icon-search-mod-noc.svg);
                     }
-                    // falta cambiar img por blanca 
                 }
      } 
      .trending_text {

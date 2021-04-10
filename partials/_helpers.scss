@@ -18,6 +18,14 @@
     font-weight: 400;
 }
 
+%hover-text {
+    font-family: $roboto;
+    font-size: 11px;
+    color: $clear;
+    line-height: 14px;
+    font-weight: 400;
+}
+
 %paragraph {
     font-family: $montserrat;
     font-weight: 500;
@@ -38,20 +46,24 @@
 //-------------------------- button ----------------------------- //
 
 %button_ver_mas{
-    margin: 74px; 
-    a{
+        margin: 74px; 
         border: 1px solid $main;
         width: 127px;    
+        height: 50px;
         border-radius: 25px;
-        padding: 18px 32px;
+        padding: 7px;
         @extend %font-h1;
         font-weight: 700; 
         font-size: 13px;
         color: $main;
-        background: white;
+        background: $clear;
         &:hover {
             background: $main;
-            color: white;
+            color: $clear;
+            cursor: pointer;
+        }
+        &:focus {
+            background: $clear;
         }
         body.dark &{
             background: transparent;
@@ -62,5 +74,5 @@
              color: $darkmode;   
             }
         }
-    }
-}
+ }
+

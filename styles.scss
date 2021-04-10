@@ -9,7 +9,7 @@ overflow-x: scroll;
 scroll-snap-type: x mandatory;
 Con esto pueden deslizar los gifs haciendo scroll con el touch  */
 
-// General
+ // General
 @import 'partials/variables';
 @import 'partials/mixins';
 @import 'partials/helpers';
@@ -24,4 +24,5 @@ Con esto pueden deslizar los gifs haciendo scroll con el touch  */
 @import 'partials/gifoMax';
 @import 'partials/trending';
 @import 'partials/crear';
-@import 'partials/footer';
+@import 'partials/footer'; 
+
