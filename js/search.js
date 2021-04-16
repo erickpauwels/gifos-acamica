@@ -31,6 +31,7 @@ searchButton.addEventListener('click', (event) => {
 
 // ---------------- DRAW GIF RESULTS --------------------//
 
+hr.style.display = 'none';
 
 function drawGif(data){
     // call element
@@ -50,9 +51,12 @@ function drawGif(data){
             // organize element
             div.appendChild(img);
             containerResults.appendChild(div)
+            // display hr
+            hr.style.display = 'block';
         });
      // NO RESULTS
     (gif.length === 0) ? (noResults.style.display = 'flex')  && (btnSeeMore.style.display= 'none') : (noResults.style.display = 'none');
+    seeMoreEvent ()
 }
 
 
@@ -67,5 +71,51 @@ function seeMoreEvent () {
             resp => drawGif(resp)
         )
 })}
-seeMoreEvent ()
+
+// ------------------TRENDING TEXT ON SEARCH SECTION ---------------------- //
+
+async function getTrendingP () {
+    let response = await fetch(`https://api.giphy.com/v1/trending/searches?api_key=${apiKey}`);
+    let trendingOptions = await response.json();
+    console.log(trendingOptions.data.slice(0,5));
+    return trendingOptions.data.slice(0,5);
+}
+
+
+// call draw function 
+
+getTrendingP().then(
+  (trendingOptions) => drawTrendingText(trendingOptions)
+);
+
+//------------------ DRAW TRENDING TEXT---------------//
+
+function drawTrendingText (trendingOptions) {
+    trendingOptions.forEach((trending, i) =>{
+        // Create SPAM for trending text
+        let spam = document.createElement('treding_text');
+        let text = trending;
+        // add classes
+        spam.classList.add('spam');
+        spam.textContent = `${text},  ` 
+        // Organice elements
+        trendingP.appendChild(spam);
+
+        //---------------- GET TRENDING TEXT ON RESULTS -----------//
+        /* spam.addEventListener('click', (event) =>{
+            event.preventDefault(spam);
+            localStorage.setItem("inputValue", JSON.stringify(trending));
+            console.log(trending);
+            getGif(trending).then(
+                gif => drawGif(gif)
+            )
+            searchText.innerHTML = trending;
+            searchText.classList.add('search_text')
+            // display Button See More
+            btnSeeMore.style.display = 'block';
+            containerResults.innerHTML = ""
+        }) */
+    })
+}
+
 

@@ -28,8 +28,21 @@ function drawHover(gif, index, div) {
     expandIcon.classList.add('expand_icon');
     iconsBox.classList.add('icons_box');
     textBox.classList.add('text_box');
-    user.textContent = elements.username;
+    user.textContent = elements.username == '' ? 'Unknown User': elements.username;
     title.textContent = elements.title;
+    // Favicon event
+    favIcon.addEventListener('click', () =>{
+        addFavorite(elements);
+        favIcon.style.backgroundImage = favoritesChecked(elements) ? "url(/assests/icon-trash-hover.svg)": '';
+    })
+    favIcon.style.backgroundImage = favoritesChecked(elements) ? "url(/assests/icon-trash-hover.svg)": '';
+    // Expand Event
+    expandIcon.addEventListener('click', () => {
+        expand(gif, index);
+    })
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+    })
 }
 
 //---------------------- REMOVE HOVER --------------------------//
@@ -39,4 +52,4 @@ function removeHover (div) {
     let divGif = document.querySelector(".img_hover");
     // remove child
     div.removeChild(divGif);
-}
+} 

@@ -6,7 +6,7 @@ Propiedades con CSS para mobile, estas van aplicadas al contenedor Trending Gifo
 overflow-x: scroll;
 scroll-snap-type: x mandatory;
 Con esto pueden deslizar los gifs haciendo scroll con el touch  */
-#results .button_ver_mas, #favoritos .button_ver_mas, #mis_gifos .button_ver_mas, #crear #secondary_container .btn, #search h1, #search .trending_text h3, #results .search_text, #results .no_results p, #favoritos h1, #mis_gifos h1, #trending h2, #crear #principal_container #crear_container h1, #crear #secondary_container #numbers .steps {
+#results .button_ver_mas, #favoritos .button_ver_mas, #mis_gifos .button_ver_mas, #crear #secondary_container .btn, #search h1, #search .trending_text h3, #results .search_text, #results .no_results p, #favoritos h1, #mis_gifos h1, #crear #principal_container #crear_container h1, #crear #secondary_container #numbers .steps, #trending h2 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 20px;
@@ -15,7 +15,7 @@ Con esto pueden deslizar los gifs haciendo scroll con el touch  */
   line-height: 33px;
 }
 
-#search .search_gifos input, #trending p, #crear #principal_container #crear_container p, footer p {
+#search .search_gifos input, #crear #principal_container #crear_container p, #trending p, footer p {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   color: #000000;
@@ -24,7 +24,7 @@ Con esto pueden deslizar los gifs haciendo scroll con el touch  */
   font-weight: 400;
 }
 
-#results .search_result .img_hover .text_box p {
+#results #search_result .search_result .img_hover .text_box p, #trending #trending_modal #trending_gifs .search_result .img_hover .text_box p {
   font-family: "Roboto", sans-serif;
   font-size: 11px;
   color: white;
@@ -32,7 +32,7 @@ Con esto pueden deslizar los gifs haciendo scroll con el touch  */
   font-weight: 400;
 }
 
-#search .trending_text p {
+#search .trending_text .spam {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -81,6 +81,133 @@ body.dark #results .button_ver_mas, #results body.dark .button_ver_mas, body.dar
 body.dark #results .button_ver_mas:hover, #results body.dark .button_ver_mas:hover, body.dark #favoritos .button_ver_mas:hover, #favoritos body.dark .button_ver_mas:hover, body.dark #mis_gifos .button_ver_mas:hover, #mis_gifos body.dark .button_ver_mas:hover, body.dark #crear #secondary_container .btn:hover, #crear #secondary_container body.dark .btn:hover {
   background-color: white;
   color: #37383C;
+}
+
+#results #search_result, #trending #trending_modal #trending_gifs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 88%;
+  position: relative;
+}
+
+#results #search_result .search_result, #trending #trending_modal #trending_gifs .search_result {
+  display: flex;
+  margin-top: 10px;
+  width: 156px;
+  height: 120px;
+  position: relative;
+}
+
+#results #search_result .search_result img, #trending #trending_modal #trending_gifs .search_result img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+#results #search_result .search_result .img_hover, #trending #trending_modal #trending_gifs .search_result .img_hover {
+  position: absolute;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #562ee5a8;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#results #search_result .search_result .img_hover .icons_box, #trending #trending_modal #trending_gifs .search_result .img_hover .icons_box {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#results #search_result .search_result .img_hover .icons_box .fav_icon, #trending #trending_modal #trending_gifs .search_result .img_hover .icons_box .fav_icon {
+  background: url(/assests/icon-fav.svg);
+  width: 32px;
+  height: 32px;
+  transition: all 0.3s ease-out;
+}
+
+#results #search_result .search_result .img_hover .icons_box .fav_icon:hover, #trending #trending_modal #trending_gifs .search_result .img_hover .icons_box .fav_icon:hover {
+  background: url(/assests/icon-fav-hover.svg);
+}
+
+#results #search_result .search_result .img_hover .icons_box .fav_icon .active, #trending #trending_modal #trending_gifs .search_result .img_hover .icons_box .fav_icon .active {
+  background-image: url(/assests/icon-fav-active.svg) no-repeat;
+  background-position: center;
+  background-color: white;
+  border-radius: 6px;
+}
+
+#results #search_result .search_result .img_hover .icons_box .download_icon, #trending #trending_modal #trending_gifs .search_result .img_hover .icons_box .download_icon {
+  background: url(/assests/icon-download.svg);
+  width: 32px;
+  height: 32px;
+  margin-left: 5px;
+}
+
+#results #search_result .search_result .img_hover .icons_box .download_icon:hover, #trending #trending_modal #trending_gifs .search_result .img_hover .icons_box .download_icon:hover {
+  background: url(/assests/icon-download-hover.svg);
+}
+
+#results #search_result .search_result .img_hover .icons_box .expand_icon, #trending #trending_modal #trending_gifs .search_result .img_hover .icons_box .expand_icon {
+  background: url(/assests/icon-max-normal.svg);
+  width: 32px;
+  height: 32px;
+  margin-left: 5px;
+}
+
+#results #search_result .search_result .img_hover .icons_box .expand_icon:hover, #trending #trending_modal #trending_gifs .search_result .img_hover .icons_box .expand_icon:hover {
+  background: url(/assests/icon-max-hover.svg);
+}
+
+#results #search_result .search_result .img_hover .text_box, #trending #trending_modal #trending_gifs .search_result .img_hover .text_box {
+  display: flex;
+  flex-direction: column;
+}
+
+#results #search_result .search_result .img_hover .text_box p, #trending #trending_modal #trending_gifs .search_result .img_hover .text_box p {
+  margin-top: 0;
+  text-align: left;
+}
+
+@media screen and (min-width: 768px) {
+  #results #search_result .search_result, #trending #trending_modal #trending_gifs .search_result {
+    display: flex;
+    margin-top: 27px;
+    width: 260px;
+    height: 200px;
+    position: relative;
+  }
+  #results #search_result .search_result img, #trending #trending_modal #trending_gifs .search_result img {
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width: 100%;
+  }
+  #results #search_result .search_result .img_hover .icons_box .fav_icon, #trending #trending_modal #trending_gifs .search_result .img_hover .icons_box .fav_icon {
+    width: 32px;
+    height: 32px;
+  }
+  #results #search_result .search_result .img_hover .icons_box .download_icon, #trending #trending_modal #trending_gifs .search_result .img_hover .icons_box .download_icon {
+    width: 32px;
+    height: 32px;
+    margin-left: 10px;
+  }
+  #results #search_result .search_result .img_hover .icons_box .expand_icon, #trending #trending_modal #trending_gifs .search_result .img_hover .icons_box .expand_icon {
+    width: 32px;
+    height: 32px;
+    margin-left: 10px;
+  }
+  #results #search_result .search_result .img_hover .text_box p, #trending #trending_modal #trending_gifs .search_result .img_hover .text_box p {
+    font-size: 15px;
+    line-height: 18px;
+  }
 }
 
 * {
@@ -362,7 +489,6 @@ body.dark #search h1 {
   padding: 5px 20px 5px 55px;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 31px;
 }
 
 body.dark #search .search_gifos {
@@ -406,15 +532,27 @@ body.dark #search .search_gifos #search_button {
   width: 50%;
   text-align: center;
   color: #572EE5;
+  text-transform: capitalize;
+  margin: 55px;
+}
+
+body.dark #search .trending_text {
+  color: white;
 }
 
 #search .trending_text h3 {
   color: #572EE5;
   font-size: 16px;
+  margin-bottom: 10px;
 }
 
-#search .trending_text p {
-  margin-bottom: 40px;
+#search .trending_text .spam {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+body.dark #search .trending_text .spam {
+  color: white;
 }
 
 @media screen and (min-width: 768px) {
@@ -427,11 +565,12 @@ body.dark #search .search_gifos #search_button {
   #search .search_gifos input:focus {
     outline: none;
   }
+  #search .trending_text {
+    margin: 90px;
+    margin-top: 50px;
+  }
   #search .trending_text h3 {
     font-size: 18px;
-  }
-  #search .trending_text p {
-    font-size: 16px;
   }
 }
 
@@ -458,10 +597,11 @@ body.dark #search .search_gifos #search_button {
 
 #results .hr {
   margin: 0 auto;
-  height: 2px;
+  height: 1px;
   width: 157px;
   background: #9CAFC3;
   margin-bottom: 43px;
+  opacity: 0.5;
 }
 
 #results .search_text {
@@ -477,91 +617,6 @@ body.dark #search .search_gifos #search_button {
 
 body.dark #results .search_text {
   color: white;
-}
-
-#results .search_result {
-  display: flex;
-  margin-top: 10px;
-  width: 156px;
-  height: 120px;
-  position: relative;
-}
-
-#results .search_result img {
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-}
-
-#results .search_result .img_hover {
-  position: absolute;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #562ee5a8;
-  padding: 10px;
-  cursor: pointer;
-}
-
-#results .search_result .img_hover .icons_box {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
-#results .search_result .img_hover .icons_box .fav_icon {
-  background: url(/assests/icon-fav.svg);
-  width: 32px;
-  height: 32px;
-}
-
-#results .search_result .img_hover .icons_box .fav_icon:hover {
-  background: url(/assests/icon-fav-hover.svg);
-}
-
-#results .search_result .img_hover .icons_box .fav_icon:active {
-  background: url(/assests/icon-fav-active.svg) no-repeat;
-  background-position: center;
-  background-color: white;
-  border-radius: 6px;
-}
-
-#results .search_result .img_hover .icons_box .download_icon {
-  background: url(/assests/icon-download.svg);
-  width: 32px;
-  height: 32px;
-  margin-left: 5px;
-}
-
-#results .search_result .img_hover .icons_box .download_icon:hover {
-  background: url(/assests/icon-download-hover.svg);
-}
-
-#results .search_result .img_hover .icons_box .expand_icon {
-  background: url(/assests/icon-max-normal.svg);
-  width: 32px;
-  height: 32px;
-  margin-left: 5px;
-}
-
-#results .search_result .img_hover .icons_box .expand_icon:hover {
-  background: url(/assests/icon-max-hover.svg);
-}
-
-#results .search_result .img_hover .text_box {
-  display: flex;
-  flex-direction: column;
-}
-
-#results .search_result .img_hover .text_box p {
-  margin-top: 0;
-  text-align: left;
 }
 
 #results .button_ver_mas {
@@ -590,41 +645,78 @@ body.dark #results .search_text {
   color: #50E3C2;
 }
 
+#results #modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  flex-direction: column;
+  z-index: 1;
+}
+
+body.dark #results #modal {
+  background-color: #222326f8;
+}
+
+#results #modal .close_modal {
+  width: 15px;
+  height: 15px;
+  margin: 70px;
+  margin-right: 10%;
+  align-self: flex-end;
+  cursor: pointer;
+  background-image: url(/assests/close.svg);
+}
+
+body.dark #results #modal .close_modal {
+  background-image: url(/assests/close-modo-noct.svg);
+}
+
+#results #modal #modal_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#results #modal #modal_container .left_div {
+  display: none;
+  background-image: url(/assests/button-slider-left.svg);
+  width: 40px;
+  height: 40px;
+}
+
+#results #modal #modal_container .left_div:hover {
+  cursor: pointer;
+  background-image: url(/assests/button-slider-left-hover.svg);
+}
+
+#results #modal #modal_container #gif_expanded {
+  margin: 25px;
+  width: 318px;
+  height: 245px;
+  object-fit: contain;
+}
+
+#results #modal #modal_container .rigth_div {
+  display: none;
+  background-image: url(/assests/Button-Slider-right.svg);
+  width: 40px;
+  height: 40px;
+}
+
+#results #modal #modal_container .rigth_div:hover {
+  cursor: pointer;
+  background-image: url(/assests/Button-Slider-right-hover.svg);
+}
+
 @media screen and (min-width: 768px) {
   #results {
     display: flex;
     margin: 0;
     padding: 0;
-  }
-  #results .search_result {
-    display: flex;
-    margin-top: 27px;
-    width: 260px;
-    height: 200px;
-    position: relative;
-  }
-  #results .search_result img {
-    flex-flow: row wrap;
-    justify-content: space-around;
-    width: 100%;
-  }
-  #results .search_result .img_hover .icons_box .fav_icon {
-    width: 32px;
-    height: 32px;
-  }
-  #results .search_result .img_hover .icons_box .download_icon {
-    width: 32px;
-    height: 32px;
-    margin-left: 10px;
-  }
-  #results .search_result .img_hover .icons_box .expand_icon {
-    width: 32px;
-    height: 32px;
-    margin-left: 10px;
-  }
-  #results .search_result .img_hover .text_box p {
-    font-size: 15px;
-    line-height: 18px;
   }
   #results hr {
     width: 25%;
@@ -637,6 +729,53 @@ body.dark #results .search_text {
   }
   #results #no_result {
     display: none;
+  }
+  #results #modal {
+    display: none;
+  }
+  #results #modal .close_modal {
+    margin-right: 20%;
+  }
+  #results #modal #modal_container {
+    display: flex;
+  }
+  #results #modal #modal_container .left_div {
+    display: block;
+    background-image: url(/assests/button-slider-left.svg);
+    width: 40px;
+    height: 40px;
+  }
+  #results #modal #modal_container .left_div:hover {
+    cursor: pointer;
+    background-image: url(/assests/button-slider-left-hover.svg);
+  }
+  body.dark #results #modal #modal_container .left_div {
+    background-image: url(/assests/button-slider-left-md-noct.svg);
+  }
+  body.dark #results #modal #modal_container .left_div:hover {
+    background-image: url(/assests/button-slider-left-hover-modo-noct-01.svg);
+  }
+  #results #modal #modal_container #gif_expanded {
+    margin: 25px;
+    width: 50vw;
+    height: 385px;
+    object-fit: contain;
+  }
+  #results #modal #modal_container .rigth_div {
+    display: block;
+    background-image: url(/assests/Button-Slider-right.svg);
+    width: 40px;
+    height: 40px;
+  }
+  #results #modal #modal_container .rigth_div:hover {
+    cursor: pointer;
+    background-image: url(/assests/Button-Slider-right-hover.svg);
+  }
+  body.dark #results #modal #modal_container .rigth_div {
+    background-image: url(/assests/button-slider-right-md-noct.svg);
+  }
+  body.dark #results #modal #modal_container .rigth_div:hover {
+    background-image: url(/assests/Button-Slider-right-hover-modo-noct-01.svg);
   }
 }
 
@@ -711,44 +850,6 @@ body.dark #results .search_text {
   width: 156px;
   height: 120px;
   background: #50E3C2;
-}
-
-#trending {
-  background: #F3F5F8;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-body.dark #trending {
-  background-color: #222326;
-}
-
-#trending h2 {
-  margin-top: 46px;
-  color: #572EE5;
-}
-
-#trending p {
-  margin-top: 7px;
-  width: 55%;
-}
-
-#trending #trending_gifs {
-  margin-top: 32px;
-  height: 187px;
-  width: 243px;
-  background: #50E3C2;
-  margin-bottom: 82px;
-}
-
-@media screen and (min-width: 768px) {
-  #trending h2 {
-    font-size: 25px;
-  }
-  #trending p {
-    font-size: 18px;
-  }
 }
 
 #crear #principal_container {
@@ -845,6 +946,110 @@ body.dark #trending {
 @media screen and (min-width: 1000px) {
   #burger {
     display: none;
+  }
+}
+
+#trending {
+  background: #F3F5F8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body.dark #trending {
+  background-color: #222326;
+}
+
+#trending h2 {
+  margin-top: 80px;
+  color: #572EE5;
+}
+
+#trending p {
+  margin-top: 7px;
+  width: 55%;
+}
+
+#trending #trending_modal {
+  display: flex;
+  justify-content: space-between;
+}
+
+#trending #trending_modal .leftbtn {
+  display: none;
+  align-self: center;
+  background-image: url(/assests/button-slider-left.svg);
+  width: 40px;
+  height: 40px;
+}
+
+#trending #trending_modal .leftbtn:hover {
+  cursor: pointer;
+  background-image: url(/assests/button-slider-left-hover.svg);
+}
+
+body.dark #trending #trending_modal .leftbtn {
+  background-image: url(/assests/button-slider-left-md-noct.svg);
+}
+
+body.dark #trending #trending_modal .leftbtn:hover {
+  background-image: url(/assests/button-slider-left-hover-modo-noct-01.svg);
+}
+
+#trending #trending_modal #trending_gifs {
+  margin-bottom: 100px;
+  justify-content: space-around;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+#trending #trending_modal .rigthbtn {
+  display: none;
+  align-self: center;
+  background-image: url(/assests/Button-Slider-right.svg);
+  width: 40px;
+  height: 40px;
+}
+
+#trending #trending_modal .rigthbtn:hover {
+  cursor: pointer;
+  background-image: url(/assests/Button-Slider-right-hover.svg);
+}
+
+body.dark #trending #trending_modal .rigthbtn {
+  background-image: url(/assests/button-slider-right-md-noct.svg);
+}
+
+body.dark #trending #trending_modal .rigthbtn:hover {
+  background-image: url(/assests/Button-Slider-right-hover-modo-noct-01.svg);
+}
+
+@media screen and (min-width: 768px) {
+  #trending h2 {
+    font-size: 25px;
+  }
+  #trending p {
+    font-size: 18px;
+  }
+  #trending #trending_modal {
+    width: 88%;
+    justify-content: space-around;
+  }
+  #trending #trending_modal .leftbtn {
+    display: flex;
+  }
+  #trending #trending_modal #trending_gifs {
+    margin-bottom: 100px;
+    overflow-x: hidden;
+  }
+  #trending #trending_modal #trending_gifs .search_result {
+    display: flex;
+    justify-content: space-around;
+    width: 290px;
+    height: 227 px;
+  }
+  #trending #trending_modal .rigthbtn {
+    display: flex;
   }
 }
 

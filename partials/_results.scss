@@ -9,13 +9,15 @@
          flex-wrap: wrap;
          justify-content: space-around;
          align-content: space-around;
+         @extend %results-hover-mobile; 
      }
     .hr {
     margin: 0 auto;
-    height: 2px;
+    height: 1px;
     width: 157px;
     background: #9CAFC3;
     margin-bottom:43px ;
+    opacity: 0.5;
     }
     .search_text{
         @extend %font-h1;
@@ -29,81 +31,7 @@
         body.dark & {
             color: $clear;
         }
-    }
-    .search_result {
-        display: flex;
-        margin-top: 10px;
-        width: 156px;
-        height: 120px;
-        position: relative;
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit:fill; 
-        }
-        .img_hover{
-            position: absolute;
-            display: flex;
-            flex-flow: column wrap;
-            justify-content: space-between;
-            align-items: flex-start;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color:$hover;
-            padding: 10px;
-            cursor: pointer;
-            .icons_box {
-                display: flex;
-                width: 100%;
-                flex-direction: row;
-                justify-content: flex-end;
-                .fav_icon{
-                    background: url(/assests/icon-fav.svg);
-                    width: 32px;
-                    height: 32px;
-                    &:hover{
-                        background: url(/assests/icon-fav-hover.svg);
-                    }
-                    &:active{
-                        background: url(/assests/icon-fav-active.svg) no-repeat;
-                        background-position: center;
-                        background-color: $clear;
-                        border-radius: 6px;
-                    }
-                }
-                .download_icon {
-                    background: url(/assests/icon-download.svg);
-                    width: 32px;
-                    height: 32px;
-                    margin-left: 5px;
-                    &:hover{
-                        background: url(/assests/icon-download-hover.svg);
-                    }
-                }
-                .expand_icon {
-                    background: url(/assests/icon-max-normal.svg);
-                    width: 32px;
-                    height: 32px;
-                    margin-left: 5px;
-                    &:hover{
-                        background: url(/assests/icon-max-hover.svg);
-                    }
-                }
-            }
-            .text_box{ 
-                display: flex;
-                flex-direction: column;
-                p{
-                    margin-top: 0;
-                    @extend %hover-text;
-                    text-align: left;
-                }
-            }
-        }
-    }
-    
+    }    
     .button_ver_mas {
         display: none;
         margin: 0 auto;
@@ -129,6 +57,65 @@
             color: $secondary;
         }
     }
+    //-------------- MODAL ---------//
+    #modal{
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color:$modal;
+        flex-direction: column;
+        z-index: 1;
+        body.dark & {
+            background-color:$nav_dark_mode;
+        }
+        .close_modal{
+            width: 15px;
+            height: 15px;
+            margin: 70px;
+            margin-right: 10%;
+            align-self: flex-end;   
+            cursor: pointer;
+            background-image: url(/assests/close.svg);
+            body.dark & {
+                background-image: url(/assests/close-modo-noct.svg);
+              }
+
+        }
+       #modal_container {
+           display: flex;
+           justify-content: center;
+            align-items: center;
+            .left_div {
+                display: none;
+                background-image: url(/assests/button-slider-left.svg);
+                width:40px;
+                height: 40px;
+                &:hover {
+                    cursor: pointer;
+                    background-image: url(/assests/button-slider-left-hover.svg);
+                }
+            }
+            #gif_expanded{
+                margin: 25px;
+                width: 318px;
+                height: 245px;
+                object-fit: contain;
+            }
+            .rigth_div {
+                display: none;
+                background-image: url(/assests/Button-Slider-right.svg);
+                width:40px;
+                height: 40px;
+                &:hover {
+                    cursor: pointer;
+                    background-image: url(/assests/Button-Slider-right-hover.svg);
+                        }
+            }
+        }
+    }
  
 }
 
@@ -140,42 +127,7 @@
        display: flex;
        margin: 0;
        padding: 0;
-       .search_result {
-            display: flex;
-            margin-top: 27px;
-            width: 260px;
-            height: 200px;
-            position: relative;
-           img {
-            flex-flow: row wrap;
-            justify-content: space-around;  
-            width: 100%;
-             }
-            .img_hover{
-                .icons_box {
-                    .fav_icon{
-                        width: 32px;
-                        height: 32px;
-                    }
-                    .download_icon {
-                        width: 32px;
-                        height: 32px;
-                        margin-left: 10px;
-                    }
-                    .expand_icon {
-                        width: 32px;
-                        height: 32px;
-                        margin-left: 10px;
-                    }
-                }
-                .text_box{
-                    p{
-                        font-size: 15px;
-                        line-height: 18px;
-                    }
-                }
-            }
-       }
+       
        hr{
            width: 25%;
        }
@@ -188,6 +140,52 @@
        #no_result{
            display: none;
        }
-   }
-    
+
+   // MODAL 
+   #modal{
+       display: none;
+       .close_modal{
+        margin-right: 20%;
+       }
+       #modal_container{
+        display: flex;         
+            .left_div {
+                display: block;
+                background-image: url(/assests/button-slider-left.svg);
+                width:40px;
+                height: 40px;
+                &:hover {
+                    cursor: pointer;
+                    background-image: url(/assests/button-slider-left-hover.svg);
+                }
+                body.dark & {
+                    background-image: url(/assests/button-slider-left-md-noct.svg);
+                    &:hover {
+                        background-image: url(/assests/button-slider-left-hover-modo-noct-01.svg);
+                    }
+                }
+            }
+            #gif_expanded{
+                margin: 25px;
+                width: 50vw;
+                height: 385px;
+                object-fit: contain;
+            }
+            .rigth_div {
+                display: block;
+                background-image: url(/assests/Button-Slider-right.svg);
+                width:40px;
+                height: 40px;
+                &:hover {
+                    cursor: pointer;
+                    background-image: url(/assests/Button-Slider-right-hover.svg);
+                }
+                body.dark & {
+                    background-image: url(/assests/button-slider-right-md-noct.svg);
+                    &:hover {
+                        background-image: url(/assests/Button-Slider-right-hover-modo-noct-01.svg);
+                    }
+                }
+            }
 }
+}}}

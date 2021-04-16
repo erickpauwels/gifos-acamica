@@ -44,7 +44,7 @@
         <!-- TRENDING SUGGESTIONS -->
         <div class="trending_text">
             <h3>Trending:</h3>
-            <p>Reactions, Entertainment, Sports, Stickers, Artists</p>
+            <div id="trending_p"></div>
         </div>
     </section>
     <section id="results">
@@ -57,12 +57,25 @@
         </div>
         <!-- SEARCH RESULTS -->
         <div id="search_result"></div>
-        <div id="btn_see_more" class="button_ver_mas" a href="#results">VER MÁS</div>
+        <div id="btn_see_more" class="button_ver_mas" a href="#results">VER MÁS</div> 
+        <!-- MODAL -->
+        <div id="modal">
+            <div class="close_modal" id="close_modal"></div>
+            <div id="modal_container">
+                <div id="left_div" class="left_div"></div>
+                <img id="gif_expanded" src="" alt="modal">
+                <div id="rigth_div" class="rigth_div"></div>
+            </div>
+        </div>
     </section>
     <section id="trending">
-        <h2>Trending GIFOS</h2>
-        <p>Mira los últimos GIFOS de nuestra comunidad.</p>
-        <div id="trending_gifs"></div>
+        <h2 id="trending_title">Trending GIFOS</h2>
+        <p id="trending_text">Mira los últimos GIFOS de nuestra comunidad.</p>
+        <div id="trending_modal">
+            <div id="left_btn" class="leftbtn"></div>
+            <div id="trending_gifs"></div>
+            <div id="rigth_btn" class="rigthbtn"></div>
+        </div>  
     </section>
     <footer>
         <p>Compartir en:</p>
@@ -75,8 +88,11 @@
     </footer>
     <script src="./js/variables.js"></script>
     <script src="./js/darkmode.js"></script>
-    <script src="./js/hovers.js"></script>
+    <script src="./js/trending.js"></script>
     <script src="./js/search.js"></script>
+    <script src="./js/hovers.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/favoritos.js"></script>
     <script src="./js/menu.js"></script>
     <script src="./js/suggestions.js"></script>
 </body>

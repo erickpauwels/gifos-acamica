@@ -32,7 +32,6 @@
          padding:5px 20px 5px 55px;
          justify-content: space-between;
          align-items: center;
-         margin-bottom: 31px;
          body.dark & {
             border: 1px solid $clear;
         }
@@ -70,14 +69,24 @@
          width: 50%;
          text-align: center;
          color: $main;
+         text-transform: capitalize; 
+         margin: 55px;
+         body.dark & {
+            color:$clear;
+        }
          h3 {
             @extend %font-h1;
             color: $main;
             font-size: 16px;
+            margin-bottom: 10px;
          }
-         p{
+         .spam{ 
              @extend %paragraph;
-             margin-bottom: 40px;
+             font-size: 16px;  
+             body.dark & {
+                color:$clear;
+            }     
+            cursor: pointer;      
          }
      }
  }
@@ -100,11 +109,10 @@
             }
         }
         .trending_text{
+            margin: 90px;
+            margin-top: 50px;
             h3{
                 font-size:18px;
-            }
-            p{
-                font-size: 16px;
             }
         }
     }
