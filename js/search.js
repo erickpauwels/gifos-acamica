@@ -53,25 +53,28 @@ function drawGif(data){
             containerResults.appendChild(div)
             // display hr
             hr.style.display = 'block';
+            console.log(searchInput.value);
         });
      // NO RESULTS
     (gif.length === 0) ? (noResults.style.display = 'flex')  && (btnSeeMore.style.display= 'none') : (noResults.style.display = 'none');
-    seeMoreEvent ()
 }
 
 
 
 //--------------- Button Event SEE MORE ---------------- //
+let offset = 0;
 
 function seeMoreEvent () {
+    
     btnSeeMore.addEventListener('click', () => {
         let getValue = JSON.parse(localStorage.getItem('inputValue'));
         offset += 12;
         getGif(getValue, offset).then(
             resp => drawGif(resp)
         )
+        
 })}
-
+seeMoreEvent ()
 // ------------------TRENDING TEXT ON SEARCH SECTION ---------------------- //
 
 async function getTrendingP () {
@@ -102,7 +105,7 @@ function drawTrendingText (trendingOptions) {
         trendingP.appendChild(spam);
 
         //---------------- GET TRENDING TEXT ON RESULTS -----------//
-        /* spam.addEventListener('click', (event) =>{
+        spam.addEventListener('click', (event) =>{
             event.preventDefault(spam);
             localStorage.setItem("inputValue", JSON.stringify(trending));
             console.log(trending);
@@ -114,7 +117,7 @@ function drawTrendingText (trendingOptions) {
             // display Button See More
             btnSeeMore.style.display = 'block';
             containerResults.innerHTML = ""
-        }) */
+        })
     })
 }
 

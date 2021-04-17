@@ -24,7 +24,7 @@ Con esto pueden deslizar los gifs haciendo scroll con el touch  */
   font-weight: 400;
 }
 
-#results #search_result .search_result .img_hover .text_box p, #trending #trending_modal #trending_gifs .search_result .img_hover .text_box p {
+#results #search_result .search_result .img_hover .text_box p, #trending #trending_modal #trending_gifs .search_result .img_hover .text_box p, #results #modal #modal_text_buttons #modal_text p {
   font-family: "Roboto", sans-serif;
   font-size: 11px;
   color: white;
@@ -584,6 +584,7 @@ body.dark #search .trending_text .spam {
   display: flex;
   flex-direction: column;
   align-content: center;
+  transition: .3s ease all;
 }
 
 #results #search_result {
@@ -624,6 +625,7 @@ body.dark #results .search_text {
   margin: 0 auto;
   margin-bottom: 35px;
   margin-top: 35px;
+  transition: .3s ease all;
 }
 
 #results .no_results {
@@ -651,10 +653,11 @@ body.dark #results .search_text {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
-  background-color: rgba(255, 255, 255, 0.9);
+  height: 100%;
+  background-color: rgba(233, 233, 233, 0.932);
   flex-direction: column;
   z-index: 1;
+  transition: .3s ease all;
 }
 
 body.dark #results #modal {
@@ -664,7 +667,7 @@ body.dark #results #modal {
 #results #modal .close_modal {
   width: 15px;
   height: 15px;
-  margin: 70px;
+  margin: 33px;
   margin-right: 10%;
   align-self: flex-end;
   cursor: pointer;
@@ -710,6 +713,66 @@ body.dark #results #modal .close_modal {
 #results #modal #modal_container .rigth_div:hover {
   cursor: pointer;
   background-image: url(/assests/Button-Slider-right-hover.svg);
+}
+
+#results #modal #modal_text_buttons {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 50vw;
+}
+
+#results #modal #modal_text_buttons #modal_text {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+#results #modal #modal_text_buttons #modal_text p {
+  color: #37383C;
+  text-align: left;
+  font-size: 15px;
+  line-height: 15px;
+}
+
+body.dark #results #modal #modal_text_buttons #modal_text p {
+  color: white;
+}
+
+#results #modal #modal_text_buttons #modal_buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+#results #modal #modal_text_buttons #modal_buttons .fav_modal {
+  background: url(/assests/icon-fav.svg);
+  width: 32px;
+  height: 32px;
+  transition: all 0.3s ease-out;
+}
+
+#results #modal #modal_text_buttons #modal_buttons .fav_modal:hover {
+  background: url(/assests/icon-fav-hover.svg);
+  cursor: pointer;
+}
+
+#results #modal #modal_text_buttons #modal_buttons .fav_modal .active {
+  background-image: url(/assests/icon-fav-active.svg) no-repeat;
+  background-position: center;
+  background-color: white;
+  border-radius: 6px;
+}
+
+#results #modal #modal_text_buttons #modal_buttons .download_modal {
+  background: url(/assests/icon-download.svg);
+  width: 32px;
+  height: 32px;
+  margin-left: 5px;
+}
+
+#results #modal #modal_text_buttons #modal_buttons .download_modal:hover {
+  background: url(/assests/icon-download-hover.svg);
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
@@ -776,6 +839,17 @@ body.dark #results #modal .close_modal {
   }
   body.dark #results #modal #modal_container .rigth_div:hover {
     background-image: url(/assests/Button-Slider-right-hover-modo-noct-01.svg);
+  }
+  #results #modal #modal_text_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 50vw;
+  }
+  #results #modal #modal_text_buttons #modal_text p {
+    font-size: 18px;
+    line-height: 20px;
   }
 }
 

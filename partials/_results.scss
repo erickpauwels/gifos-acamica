@@ -2,6 +2,7 @@
      display: flex;
      flex-direction: column;
      align-content: center;
+     transition: .3s ease all;
      #search_result{
          width: 88%;
          margin: 0 auto;
@@ -38,6 +39,7 @@
         @extend %button_ver_mas;
         margin-bottom: 35px;
         margin-top:35px;
+        transition: .3s ease all;
     }
     // NO RESULT
     .no_results{
@@ -64,17 +66,18 @@
         top: 0;
         left: 0;
         width: 100vw;
-        height: 100vh;
+        height: 100%;
         background-color:$modal;
         flex-direction: column;
         z-index: 1;
+        transition: .3s ease all;
         body.dark & {
             background-color:$nav_dark_mode;
         }
         .close_modal{
             width: 15px;
             height: 15px;
-            margin: 70px;
+            margin: 33px;
             margin-right: 10%;
             align-self: flex-end;   
             cursor: pointer;
@@ -112,7 +115,60 @@
                 &:hover {
                     cursor: pointer;
                     background-image: url(/assests/Button-Slider-right-hover.svg);
-                        }
+                }
+            }
+        }
+        #modal_text_buttons{
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            width: 50vw;
+            #modal_text{
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 15px;
+                p{
+                    @extend %hover-text;
+                    color: $darkmode;
+                    text-align: left;
+                    font-size: 15px;
+                    line-height: 15px;
+                    body.dark &{
+                        color: $clear;
+                    }
+                }
+            }
+            #modal_buttons{
+                    display: flex;
+                    flex-direction: row;
+                    
+
+            .fav_modal{
+                background: url(/assests/icon-fav.svg);
+                width: 32px;
+                height: 32px;
+                transition: all 0.3s ease-out;
+                &:hover{
+                    background: url(/assests/icon-fav-hover.svg);
+                    cursor: pointer;
+                }
+                .active{
+                    background-image: url(/assests/icon-fav-active.svg) no-repeat;
+                    background-position: center;
+                    background-color: $clear;
+                    border-radius: 6px;
+                    }
+                }
+            .download_modal {
+                    background: url(/assests/icon-download.svg);
+                    width: 32px;
+                    height: 32px;
+                    margin-left: 5px;
+                    &:hover{
+                        background: url(/assests/icon-download-hover.svg);
+                        cursor: pointer;
+                    }
+                }
             }
         }
     }
@@ -187,5 +243,19 @@
                     }
                 }
             }
+        }
+        #modal_text_buttons{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin: 0 auto;
+            width: 50vw;
+            #modal_text{
+                p{
+                    font-size: 18px;
+                    line-height: 20px;
+                }
+        }
+    }
 }
-}}}
+   }}

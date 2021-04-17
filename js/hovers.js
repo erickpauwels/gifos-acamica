@@ -36,10 +36,15 @@ function drawHover(gif, index, div) {
         favIcon.style.backgroundImage = favoritesChecked(elements) ? "url(/assests/icon-trash-hover.svg)": '';
     })
     favIcon.style.backgroundImage = favoritesChecked(elements) ? "url(/assests/icon-trash-hover.svg)": '';
-    // Expand Event
+    
+    //-------------------Expand Event------------------//
+
     expandIcon.addEventListener('click', () => {
         expand(gif, index);
     })
+
+    //--------------------close modal ------------------//
+
     closeModal.addEventListener('click', () => {
         modal.style.display = 'none';
     })

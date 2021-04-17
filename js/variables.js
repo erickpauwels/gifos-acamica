@@ -15,12 +15,18 @@ let trendingP = document.getElementById('trending_p');
 let btnSeeMore = document.getElementById('btn_see_more');
 let noResults = document.getElementById ('no_results');
 let containerResults = document.getElementById('search_result');
-let offset = 0;
 let hr = document.getElementById('hr');
 
 // -----------VARIABLES MODAL -----------//
 let modal = document.getElementById('modal');
+let modalContainer = document.getElementById('modal_container')
 let closeModal = document.getElementById('close_modal');
+let modalTextButtons = document.getElementById('modal_text_buttons')
+let modalUser = document.getElementById('modal_user');
+let modalTitle = document.getElementById('modal_title');
+let modalButtons = document.getElementById('modal_buttons');
+
+
 let moveLeftBtn = document.getElementById('left_div');
 let moveRigthBtn = document.getElementById('rigth_div');
 let gifExpanded = document.getElementById('gif_expanded');

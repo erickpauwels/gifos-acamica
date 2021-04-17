@@ -1,7 +1,7 @@
 
 //------ FAVORITE EVENT -------//
 
-function addFavorite (elements) {
+function addFavorite (gif) {
 let favorites = JSON.parse(localStorage.getItem("favorites"));
 let favoritesIndex;
 // call a null element & create an array
@@ -10,18 +10,17 @@ if (!favorites){
      favoritesIndex = -1;
   }else {
       // Set variable for the Index & search for the ID
-    favoritesIndex = favorites.findIndex( favorites => favorites.id == elements.id )
+    favoritesIndex = favorites.findIndex( favorites => favorites.id == gif.id )
   }
 
 // findIndex method, '=-1' if doesnt found the element
 if (favoritesIndex == -1){
-    favorites.push(elements);
+    favorites.push(gif);
 }else {
 // Splice method , delete the repeated id 
     favorites.splice (favoritesIndex, 1)
 }
 localStorage.setItem("favorites", JSON.stringify(favorites));
-
 
 }
 
