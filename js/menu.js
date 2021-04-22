@@ -10,3 +10,5 @@ burger.addEventListener('click', () =>{
     sticky_nav.classList.toggle('sticky_menu');
 });
 
+
+

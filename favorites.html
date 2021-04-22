@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gifos - Home</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.min.css">
-    <title>Gifos - Favoritos</title>
+    <link rel="stylesheet" href="/css/styles.min.css">
 </head>
 <body>
     <header>
@@ -25,29 +25,61 @@
         <nav id="menu_mobile">
             <ul>
                 <li id="darkmode" class="darkmode">Modo Nocturno</li><hr id="burger_menu_border">
-                <li><a href="/favoritos.html">Favoritos</a></li>
-                <li><a href="/misgifos.html">Mis Gifos</a></li>
+                <li id="favorites_section">Favoritos</li>
+                <li id="mis_gifos_section">Mis Gifos</li>
                 <li class="cta"><a class="plus_button" href="/crear.html"></a></li>
             </ul>
         </nav>
-    </header>
-    <section id="favoritos">
-        <img src="/assests/icon-favoritos.svg" alt="favoritos_icon">
-        <h1>Favoritos</h1>
-        <div id="favoritos_container">
-        <div class="favorite_gif">caja</div>
-        <div class="favorite_gif">caja</div>
-        <div class="favorite_gif">caja</div>
-        <div class="favorite_gif">caja</div>
-        <div class="favorite_gif">caja</div>
-        <div class="favorite_gif">caja</div>
+    </header>   
+     
+    <section id="results">
+        <hr id="hr" class="hr">
+        <h2 id="search_text"></h2>
+        <!-- NO RESULTS -->
+        <div id="no_results" class="no_results">
+            <img src="/assests/icon-busqueda-sin-resultado.svg" alt="">
+            <p>Intenta con otra búsqueda.</p>
         </div>
-        <div class="button_ver_mas"><a href="#">VER MÁS</a></div>
-    </section>
+        <!-- SEARCH RESULTS -->
+        <div id="search_result"></div>
+        <div id="btn_see_more" class="button_ver_mas" a href="#results">VER MÁS</div> 
+    </section>    
+    <section id="favoritos" class="favorites_container">
+        <div id="favorite_header">
+            <img id="fav_icon_section" src="/assests/icon-favoritos.svg" alt="favoritos_icon">
+            <h1>Favoritos</h1>
+        </div>
+        <div id="favorites_results"></div>
+        <div id="btn_see_more_favorites" class="button_ver_mas">VER MÁS</div>
+        <!-- NO RESULTS  -->
+        <div id="no_results_fav">
+            <img src="./assests/icon-fav-sin-contenido.svg" alt="no reuslts">
+            <p>Aún no tienes Gifos Favoritos</p>
+        </div>
+    </section> 
+    <div id="modal">
+        <div class="close_modal" id="close_modal"></div>
+        <div id="modal_container">
+            <div id="left_div" class="left_div"></div>
+            <img id="gif_expanded" src="" alt="modal">
+            <div id="rigth_div" class="rigth_div"></div>
+        </div>
+        <div id="modal_text_buttons">
+            <div id="modal_text">
+                <p id="modal_user"></p>
+                <p id="modal_title"></p>
+            </div>
+            <div id="modal_buttons"></div>
+        </div>
+    </div>
     <section id="trending">
-        <h2>Trending GIFOS</h2>
-        <p>Mira los últimos GIFOS de nuestra comunidad.</p>
-        <div id="trending_gifs"></div>
+        <h2 id="trending_title">Trending GIFOS</h2>
+        <p id="trending_text">Mira los últimos GIFOS de nuestra comunidad.</p>
+        <div id="trending_modal">
+            <div id="left_btn" class="leftbtn"></div>
+            <div id="trending_gifs"></div>
+            <div id="rigth_btn" class="rigthbtn"></div>
+        </div>  
     </section>
     <footer>
         <p>Compartir en:</p>
@@ -61,7 +93,10 @@
     <script src="./js/variables.js"></script>
     <script src="./js/darkmode.js"></script>
     <script src="./js/hovers.js"></script>
-    <script src="./js/search.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/trending.js"></script>
+    <!-- <script src="./js/search.js"></script> -->
+    <script src="./js/favoritos.js"></script>
     <script src="./js/menu.js"></script>
     <script src="./js/suggestions.js"></script>
 </body>

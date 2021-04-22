@@ -1,4 +1,4 @@
--<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,8 +25,8 @@
         <nav id="menu_mobile">
             <ul>
                 <li id="darkmode" class="darkmode">Modo Nocturno</li><hr id="burger_menu_border">
-                <li><a href="/favoritos.html">Favoritos</a></li>
-                <li><a href="/misgifos.html">Mis Gifos</a></li>
+                <li id="favorites_section" ><a href="/favorites.html">Favoritos</a></li>
+                <li id="mis_gifos_section">Mis Gifos</li>
                 <li class="cta"><a class="plus_button" href="/crear.html"></a></li>
             </ul>
         </nav>
@@ -58,23 +58,38 @@
         <!-- SEARCH RESULTS -->
         <div id="search_result"></div>
         <div id="btn_see_more" class="button_ver_mas" a href="#results">VER MÁS</div> 
-        <!-- MODAL -->
-        <div id="modal">
-            <div class="close_modal" id="close_modal"></div>
-            <div id="modal_container">
-                <div id="left_div" class="left_div"></div>
-                <img id="gif_expanded" src="" alt="modal">
-                <div id="rigth_div" class="rigth_div"></div>
-            </div>
-            <div id="modal_text_buttons">
-                <div id="modal_text">
-                    <p id="modal_user"></p>
-                    <p id="modal_title"></p>
-                </div>
-                <div id="modal_buttons"></div>
-            </div>
+    </section>        
+    <!-- MODAL -->
+    <div id="modal">
+        <div class="close_modal" id="close_modal"></div>
+        <div id="modal_container">
+            <div id="left_div" class="left_div"></div>
+            <img id="gif_expanded" src="" alt="modal">
+            <div id="rigth_div" class="rigth_div"></div>
         </div>
-    </section>
+        <div id="modal_text_buttons">
+            <div id="modal_text">
+                <p id="modal_user"></p>
+                <p id="modal_title"></p>
+            </div>
+            <div id="modal_buttons"></div>
+        </div>
+    </div>
+    <!-- <section id="mis_gifos">
+        <img src="/assests/icon-mis-gifos.svg" alt="">
+        <h1>Mis GIFOS</h1>
+        <div id="my_gif_container">
+        <div class="mi_gif">caja</div>
+        <div class="mi_gif">caja</div>
+        <div class="mi_gif">caja</div>
+        <div class="mi_gif">caja</div>
+        <div class="mi_gif">caja</div>
+        <div class="mi_gif">caja</div>
+        <div class="mi_gif">caja</div>
+        <div class="mi_gif">caja</div>
+        </div>
+        <div class="button_ver_mas"><a href="#">VER MÁS</a></div>
+    </section> -->
     <section id="trending">
         <h2 id="trending_title">Trending GIFOS</h2>
         <p id="trending_text">Mira los últimos GIFOS de nuestra comunidad.</p>

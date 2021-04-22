@@ -1,8 +1,8 @@
-//-------------- TRENDING CALL API -------//
+//-------------TRENDING CALL API -------//
 
 
-async function getTrendings  (offset) {
-        let search = await fetch((`${API}/trending?api_key=${apiKey}&limit=3&offset=${offset}`));
+async function getTrendings(offset, limit) {
+        let search = await fetch((`${API}/trending?api_key=${apiKey}&limit=${limit}&offset=${offset}`));
         let trending = await search.json();
         return trending;
 }
@@ -10,12 +10,13 @@ getTrendings().then(
     resp => drawTrendingGif(resp)
 ) 
 
+
 //------------ DRAW TRENDING GIFS -------------//
 
 function drawTrendingGif(data){ 
     trendingContainer.innerHTML = '';
     // call element
-    let gif = data.data.slice(0,3);
+    let gif = data.data.slice(0,20);
     gif.forEach(
         (element, index) => {
             // create element 
@@ -32,10 +33,10 @@ function drawTrendingGif(data){
             div.appendChild(img);
             trendingContainer.appendChild(div);
            
-             
+           
         });
        // NO RESULTS
-    (gif.length === 0) ?  (LeftBtn.style.display= 'none') && (trendingTitle.textContent = 'Ups, no hay más GIFOS por acá') && (trendingText.style.display ='none'): (noResults.style.display = 'none') && (trendingText.style.display = 'block') && (trendingTitle.textContent = 'Trending GIFOS');      
+    (gif.length === 0) ?  (LeftBtn.style.display = "none") && (trendingTitle.textContent = 'Ups, no hay más GIFOS por acá') && (trendingText.style.display ='none'): (noResults.style.display = 'none') && (trendingText.style.display = 'block') && (trendingTitle.textContent = 'Trending GIFOS');      
            
 }
 
@@ -54,6 +55,7 @@ LeftBtn.addEventListener('click', ( )=> {
 
 function RigthBtnEvent() {
     offset += 3;
+    limit = 3;
     getTrendings(offset).then(
         resp => drawTrendingGif(resp)
     ) 
@@ -61,8 +63,13 @@ function RigthBtnEvent() {
 
 function LeftBtnEvent() {
     offset -= 3;
+    limit = 3;
     getTrendings(offset).then(
         resp => drawTrendingGif(resp)
     ) 
     
 }
+
+
+ 
+

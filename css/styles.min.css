@@ -6,7 +6,7 @@ Propiedades con CSS para mobile, estas van aplicadas al contenedor Trending Gifo
 overflow-x: scroll;
 scroll-snap-type: x mandatory;
 Con esto pueden deslizar los gifs haciendo scroll con el touch  */
-#results .button_ver_mas, #favoritos .button_ver_mas, #mis_gifos .button_ver_mas, #crear #secondary_container .btn, #search h1, #search .trending_text h3, #results .search_text, #results .no_results p, #favoritos h1, #mis_gifos h1, #crear #principal_container #crear_container h1, #crear #secondary_container #numbers .steps, #trending h2 {
+#results .button_ver_mas, #btn_see_more_favorites, #mis_gifos .button_ver_mas, #crear #secondary_container .btn, #search h1, #search .trending_text h3, #results .search_text, #results .no_results p, #favoritos #favorite_header h1, #no_results_fav p, #mis_gifos h1, #trending h2, #crear #principal_container #crear_container h1, #crear #secondary_container #numbers .steps {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 20px;
@@ -15,7 +15,7 @@ Con esto pueden deslizar los gifs haciendo scroll con el touch  */
   line-height: 33px;
 }
 
-#search .search_gifos input, #crear #principal_container #crear_container p, #trending p, footer p {
+#search .search_gifos input, #trending p, #crear #principal_container #crear_container p, footer p {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   color: #000000;
@@ -24,7 +24,7 @@ Con esto pueden deslizar los gifs haciendo scroll con el touch  */
   font-weight: 400;
 }
 
-#results #search_result .search_result .img_hover .text_box p, #trending #trending_modal #trending_gifs .search_result .img_hover .text_box p, #results #modal #modal_text_buttons #modal_text p {
+#results #search_result .img_hover .text_box p, #trending #trending_modal #trending_gifs .img_hover .text_box p, #modal #modal_text_buttons #modal_text p, #favoritos #favorites_results .img_hover .text_box p {
   font-family: "Roboto", sans-serif;
   font-size: 11px;
   color: white;
@@ -49,7 +49,7 @@ nav.menu_active ul li {
   line-height: 23px;
 }
 
-#results .button_ver_mas, #favoritos .button_ver_mas, #mis_gifos .button_ver_mas, #crear #secondary_container .btn {
+#results .button_ver_mas, #btn_see_more_favorites, #mis_gifos .button_ver_mas, #crear #secondary_container .btn {
   margin: 74px;
   border: 1px solid #572EE5;
   width: 127px;
@@ -62,23 +62,23 @@ nav.menu_active ul li {
   background: white;
 }
 
-#results .button_ver_mas:hover, #favoritos .button_ver_mas:hover, #mis_gifos .button_ver_mas:hover, #crear #secondary_container .btn:hover {
+#results .button_ver_mas:hover, #btn_see_more_favorites:hover, #mis_gifos .button_ver_mas:hover, #crear #secondary_container .btn:hover {
   background: #572EE5;
   color: white;
   cursor: pointer;
 }
 
-#results .button_ver_mas:focus, #favoritos .button_ver_mas:focus, #mis_gifos .button_ver_mas:focus, #crear #secondary_container .btn:focus {
+#results .button_ver_mas:focus, #btn_see_more_favorites:focus, #mis_gifos .button_ver_mas:focus, #crear #secondary_container .btn:focus {
   background: white;
 }
 
-body.dark #results .button_ver_mas, #results body.dark .button_ver_mas, body.dark #favoritos .button_ver_mas, #favoritos body.dark .button_ver_mas, body.dark #mis_gifos .button_ver_mas, #mis_gifos body.dark .button_ver_mas, body.dark #crear #secondary_container .btn, #crear #secondary_container body.dark .btn {
+body.dark #results .button_ver_mas, #results body.dark .button_ver_mas, body.dark #btn_see_more_favorites, body.dark #mis_gifos .button_ver_mas, #mis_gifos body.dark .button_ver_mas, body.dark #crear #secondary_container .btn, #crear #secondary_container body.dark .btn {
   background: transparent;
   color: white;
   border-color: white;
 }
 
-body.dark #results .button_ver_mas:hover, #results body.dark .button_ver_mas:hover, body.dark #favoritos .button_ver_mas:hover, #favoritos body.dark .button_ver_mas:hover, body.dark #mis_gifos .button_ver_mas:hover, #mis_gifos body.dark .button_ver_mas:hover, body.dark #crear #secondary_container .btn:hover, #crear #secondary_container body.dark .btn:hover {
+body.dark #results .button_ver_mas:hover, #results body.dark .button_ver_mas:hover, body.dark #btn_see_more_favorites:hover, body.dark #mis_gifos .button_ver_mas:hover, #mis_gifos body.dark .button_ver_mas:hover, body.dark #crear #secondary_container .btn:hover, #crear #secondary_container body.dark .btn:hover {
   background-color: white;
   color: #37383C;
 }
@@ -86,26 +86,21 @@ body.dark #results .button_ver_mas:hover, #results body.dark .button_ver_mas:hov
 #results #search_result, #trending #trending_modal #trending_gifs {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  width: 88%;
-  position: relative;
 }
 
 #results #search_result .search_result, #trending #trending_modal #trending_gifs .search_result {
-  display: flex;
-  margin-top: 10px;
-  width: 156px;
-  height: 120px;
   position: relative;
+  margin-right: 15px;
+  margin-top: 15px;
 }
 
-#results #search_result .search_result img, #trending #trending_modal #trending_gifs .search_result img {
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
+#results #search_result img, #trending #trending_modal #trending_gifs img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
 }
 
-#results #search_result .search_result .img_hover, #trending #trending_modal #trending_gifs .search_result .img_hover {
+#results #search_result .img_hover, #trending #trending_modal #trending_gifs .img_hover {
   position: absolute;
   display: flex;
   flex-flow: column wrap;
@@ -120,94 +115,61 @@ body.dark #results .button_ver_mas:hover, #results body.dark .button_ver_mas:hov
   cursor: pointer;
 }
 
-#results #search_result .search_result .img_hover .icons_box, #trending #trending_modal #trending_gifs .search_result .img_hover .icons_box {
+#results #search_result .img_hover .icons_box, #trending #trending_modal #trending_gifs .img_hover .icons_box {
   display: flex;
   width: 100%;
   flex-direction: row;
   justify-content: flex-end;
 }
 
-#results #search_result .search_result .img_hover .icons_box .fav_icon, #trending #trending_modal #trending_gifs .search_result .img_hover .icons_box .fav_icon {
+#results #search_result .img_hover .icons_box .fav_icon, #trending #trending_modal #trending_gifs .img_hover .icons_box .fav_icon {
   background: url(/assests/icon-fav.svg);
   width: 32px;
   height: 32px;
   transition: all 0.3s ease-out;
 }
 
-#results #search_result .search_result .img_hover .icons_box .fav_icon:hover, #trending #trending_modal #trending_gifs .search_result .img_hover .icons_box .fav_icon:hover {
+#results #search_result .img_hover .icons_box .fav_icon:hover, #trending #trending_modal #trending_gifs .img_hover .icons_box .fav_icon:hover {
   background: url(/assests/icon-fav-hover.svg);
 }
 
-#results #search_result .search_result .img_hover .icons_box .fav_icon .active, #trending #trending_modal #trending_gifs .search_result .img_hover .icons_box .fav_icon .active {
+#results #search_result .img_hover .icons_box .fav_icon .active, #trending #trending_modal #trending_gifs .img_hover .icons_box .fav_icon .active {
   background-image: url(/assests/icon-fav-active.svg) no-repeat;
   background-position: center;
   background-color: white;
   border-radius: 6px;
 }
 
-#results #search_result .search_result .img_hover .icons_box .download_icon, #trending #trending_modal #trending_gifs .search_result .img_hover .icons_box .download_icon {
+#results #search_result .img_hover .icons_box .download_icon, #trending #trending_modal #trending_gifs .img_hover .icons_box .download_icon {
   background: url(/assests/icon-download.svg);
   width: 32px;
   height: 32px;
   margin-left: 5px;
 }
 
-#results #search_result .search_result .img_hover .icons_box .download_icon:hover, #trending #trending_modal #trending_gifs .search_result .img_hover .icons_box .download_icon:hover {
+#results #search_result .img_hover .icons_box .download_icon:hover, #trending #trending_modal #trending_gifs .img_hover .icons_box .download_icon:hover {
   background: url(/assests/icon-download-hover.svg);
 }
 
-#results #search_result .search_result .img_hover .icons_box .expand_icon, #trending #trending_modal #trending_gifs .search_result .img_hover .icons_box .expand_icon {
+#results #search_result .img_hover .icons_box .expand_icon, #trending #trending_modal #trending_gifs .img_hover .icons_box .expand_icon {
   background: url(/assests/icon-max-normal.svg);
   width: 32px;
   height: 32px;
   margin-left: 5px;
 }
 
-#results #search_result .search_result .img_hover .icons_box .expand_icon:hover, #trending #trending_modal #trending_gifs .search_result .img_hover .icons_box .expand_icon:hover {
+#results #search_result .img_hover .icons_box .expand_icon:hover, #trending #trending_modal #trending_gifs .img_hover .icons_box .expand_icon:hover {
   background: url(/assests/icon-max-hover.svg);
 }
 
-#results #search_result .search_result .img_hover .text_box, #trending #trending_modal #trending_gifs .search_result .img_hover .text_box {
+#results #search_result .img_hover .text_box, #trending #trending_modal #trending_gifs .img_hover .text_box {
   display: flex;
   flex-direction: column;
 }
 
-#results #search_result .search_result .img_hover .text_box p, #trending #trending_modal #trending_gifs .search_result .img_hover .text_box p {
+#results #search_result .img_hover .text_box p, #trending #trending_modal #trending_gifs .img_hover .text_box p {
   margin-top: 0;
   text-align: left;
-}
-
-@media screen and (min-width: 768px) {
-  #results #search_result .search_result, #trending #trending_modal #trending_gifs .search_result {
-    display: flex;
-    margin-top: 27px;
-    width: 260px;
-    height: 200px;
-    position: relative;
-  }
-  #results #search_result .search_result img, #trending #trending_modal #trending_gifs .search_result img {
-    flex-flow: row wrap;
-    justify-content: space-around;
-    width: 100%;
-  }
-  #results #search_result .search_result .img_hover .icons_box .fav_icon, #trending #trending_modal #trending_gifs .search_result .img_hover .icons_box .fav_icon {
-    width: 32px;
-    height: 32px;
-  }
-  #results #search_result .search_result .img_hover .icons_box .download_icon, #trending #trending_modal #trending_gifs .search_result .img_hover .icons_box .download_icon {
-    width: 32px;
-    height: 32px;
-    margin-left: 10px;
-  }
-  #results #search_result .search_result .img_hover .icons_box .expand_icon, #trending #trending_modal #trending_gifs .search_result .img_hover .icons_box .expand_icon {
-    width: 32px;
-    height: 32px;
-    margin-left: 10px;
-  }
-  #results #search_result .search_result .img_hover .text_box p, #trending #trending_modal #trending_gifs .search_result .img_hover .text_box p {
-    font-size: 15px;
-    line-height: 18px;
-  }
 }
 
 * {
@@ -273,17 +235,6 @@ body.dark header #logos .logo_mobile {
 
 body.dark header #logos .logo_mobile_dark {
   display: block;
-}
-
-header.sticky_menu {
-  position: sticky;
-  top: 0px;
-  display: flex;
-  background: white;
-}
-
-body.dark header.sticky_menu {
-  background: #37383C;
 }
 
 nav {
@@ -359,7 +310,7 @@ body.dark #hamburger_menu.hamburguer_active {
   background-image: url(/assests/close-modo-noct.svg);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   header nav ul #darkmode {
     font-size: 18px;
   }
@@ -555,7 +506,7 @@ body.dark #search .trending_text .spam {
   color: white;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   body.dark #search .search_gifos {
     border: 1px solid white;
   }
@@ -597,6 +548,7 @@ body.dark #search .trending_text .spam {
 }
 
 #results .hr {
+  display: none;
   margin: 0 auto;
   height: 1px;
   width: 157px;
@@ -623,8 +575,8 @@ body.dark #results .search_text {
 #results .button_ver_mas {
   display: none;
   margin: 0 auto;
-  margin-bottom: 35px;
-  margin-top: 35px;
+  margin-bottom: 74px;
+  margin-top: 75px;
   transition: .3s ease all;
 }
 
@@ -647,7 +599,7 @@ body.dark #results .search_text {
   color: #50E3C2;
 }
 
-#results #modal {
+#modal {
   display: none;
   position: fixed;
   top: 0;
@@ -660,11 +612,11 @@ body.dark #results .search_text {
   transition: .3s ease all;
 }
 
-body.dark #results #modal {
+body.dark #modal {
   background-color: #222326f8;
 }
 
-#results #modal .close_modal {
+#modal .close_modal {
   width: 15px;
   height: 15px;
   margin: 33px;
@@ -674,108 +626,108 @@ body.dark #results #modal {
   background-image: url(/assests/close.svg);
 }
 
-body.dark #results #modal .close_modal {
+body.dark #modal .close_modal {
   background-image: url(/assests/close-modo-noct.svg);
 }
 
-#results #modal #modal_container {
+#modal #modal_container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#results #modal #modal_container .left_div {
+#modal #modal_container .left_div {
   display: none;
   background-image: url(/assests/button-slider-left.svg);
   width: 40px;
   height: 40px;
 }
 
-#results #modal #modal_container .left_div:hover {
+#modal #modal_container .left_div:hover {
   cursor: pointer;
   background-image: url(/assests/button-slider-left-hover.svg);
 }
 
-#results #modal #modal_container #gif_expanded {
-  margin: 25px;
+#modal #modal_container #gif_expanded {
+  margin: 25px 20px 5px 20px;
   width: 318px;
   height: 245px;
   object-fit: contain;
 }
 
-#results #modal #modal_container .rigth_div {
+#modal #modal_container .rigth_div {
   display: none;
   background-image: url(/assests/Button-Slider-right.svg);
   width: 40px;
   height: 40px;
 }
 
-#results #modal #modal_container .rigth_div:hover {
+#modal #modal_container .rigth_div:hover {
   cursor: pointer;
   background-image: url(/assests/Button-Slider-right-hover.svg);
 }
 
-#results #modal #modal_text_buttons {
+#modal #modal_text_buttons {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   width: 50vw;
 }
 
-#results #modal #modal_text_buttons #modal_text {
+#modal #modal_text_buttons #modal_text {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
 }
 
-#results #modal #modal_text_buttons #modal_text p {
+#modal #modal_text_buttons #modal_text p {
   color: #37383C;
   text-align: left;
   font-size: 15px;
   line-height: 15px;
 }
 
-body.dark #results #modal #modal_text_buttons #modal_text p {
+body.dark #modal #modal_text_buttons #modal_text p {
   color: white;
 }
 
-#results #modal #modal_text_buttons #modal_buttons {
+#modal #modal_text_buttons #modal_buttons {
   display: flex;
   flex-direction: row;
 }
 
-#results #modal #modal_text_buttons #modal_buttons .fav_modal {
+#modal #modal_text_buttons #modal_buttons .fav_modal {
   background: url(/assests/icon-fav.svg);
   width: 32px;
   height: 32px;
   transition: all 0.3s ease-out;
 }
 
-#results #modal #modal_text_buttons #modal_buttons .fav_modal:hover {
+#modal #modal_text_buttons #modal_buttons .fav_modal:hover {
   background: url(/assests/icon-fav-hover.svg);
   cursor: pointer;
 }
 
-#results #modal #modal_text_buttons #modal_buttons .fav_modal .active {
+#modal #modal_text_buttons #modal_buttons .fav_modal .active {
   background-image: url(/assests/icon-fav-active.svg) no-repeat;
   background-position: center;
   background-color: white;
   border-radius: 6px;
 }
 
-#results #modal #modal_text_buttons #modal_buttons .download_modal {
+#modal #modal_text_buttons #modal_buttons .download_modal {
   background: url(/assests/icon-download.svg);
   width: 32px;
   height: 32px;
   margin-left: 5px;
 }
 
-#results #modal #modal_text_buttons #modal_buttons .download_modal:hover {
+#modal #modal_text_buttons #modal_buttons .download_modal:hover {
   background: url(/assests/icon-download-hover.svg);
   cursor: pointer;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   #results {
     display: flex;
     margin: 0;
@@ -793,61 +745,95 @@ body.dark #results #modal #modal_text_buttons #modal_text p {
   #results #no_result {
     display: none;
   }
-  #results #modal {
+  #results #search_result {
+    display: flex;
+    margin-top: 70px;
+    position: relative;
+  }
+  #results #search_result .search_result {
+    position: relative;
+    margin-right: 15px;
+    margin-top: 17px;
+  }
+  #results #search_result .search_result img {
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width: 244px;
+    height: 244px;
+  }
+  #results #search_result .search_result .img_hover .icons_box .fav_icon {
+    width: 32px;
+    height: 32px;
+  }
+  #results #search_result .search_result .img_hover .icons_box .download_icon {
+    width: 32px;
+    height: 32px;
+    margin-left: 10px;
+  }
+  #results #search_result .search_result .img_hover .icons_box .expand_icon {
+    width: 32px;
+    height: 32px;
+    margin-left: 10px;
+  }
+  #results #search_result .search_result .img_hover .text_box p {
+    font-size: 15px;
+    line-height: 18px;
+  }
+  #modal {
     display: none;
   }
-  #results #modal .close_modal {
+  #modal .close_modal {
     margin-right: 20%;
   }
-  #results #modal #modal_container {
+  #modal #modal_container {
     display: flex;
   }
-  #results #modal #modal_container .left_div {
+  #modal #modal_container .left_div {
     display: block;
     background-image: url(/assests/button-slider-left.svg);
     width: 40px;
     height: 40px;
   }
-  #results #modal #modal_container .left_div:hover {
+  #modal #modal_container .left_div:hover {
     cursor: pointer;
     background-image: url(/assests/button-slider-left-hover.svg);
   }
-  body.dark #results #modal #modal_container .left_div {
+  body.dark #modal #modal_container .left_div {
     background-image: url(/assests/button-slider-left-md-noct.svg);
   }
-  body.dark #results #modal #modal_container .left_div:hover {
+  body.dark #modal #modal_container .left_div:hover {
     background-image: url(/assests/button-slider-left-hover-modo-noct-01.svg);
   }
-  #results #modal #modal_container #gif_expanded {
+  #modal #modal_container #gif_expanded {
     margin: 25px;
     width: 50vw;
     height: 385px;
     object-fit: contain;
   }
-  #results #modal #modal_container .rigth_div {
+  #modal #modal_container .rigth_div {
     display: block;
     background-image: url(/assests/Button-Slider-right.svg);
     width: 40px;
     height: 40px;
   }
-  #results #modal #modal_container .rigth_div:hover {
+  #modal #modal_container .rigth_div:hover {
     cursor: pointer;
     background-image: url(/assests/Button-Slider-right-hover.svg);
   }
-  body.dark #results #modal #modal_container .rigth_div {
+  body.dark #modal #modal_container .rigth_div {
     background-image: url(/assests/button-slider-right-md-noct.svg);
   }
-  body.dark #results #modal #modal_container .rigth_div:hover {
+  body.dark #modal #modal_container .rigth_div:hover {
     background-image: url(/assests/Button-Slider-right-hover-modo-noct-01.svg);
   }
-  #results #modal #modal_text_buttons {
+  #modal #modal_text_buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     margin: 0 auto;
     width: 50vw;
   }
-  #results #modal #modal_text_buttons #modal_text p {
+  #modal #modal_text_buttons #modal_text p {
     font-size: 18px;
     line-height: 20px;
   }
@@ -856,47 +842,164 @@ body.dark #results #modal #modal_text_buttons #modal_text p {
 #favoritos {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+#favoritos #favorite_header {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
-#favoritos img {
-  margin-top: 5px;
-  margin-bottom: 7px;
+#favoritos #favorite_header img {
+  width: 25px;
+  height: 25px;
+  margin-bottom: 10px;
 }
 
-#favoritos h1 {
+#favoritos #favorite_header h1 {
   color: #572EE5;
   margin-bottom: 46px;
 }
 
-#favoritos #favoritos_container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  width: 100%;
+body.dark #favoritos #favorite_header h1 {
+  color: white;
 }
 
-#favoritos #favoritos_container .favorite_gif {
-  margin-bottom: 25px;
-  width: 156px;
-  height: 120px;
-  background: #50E3C2;
+#favoritos #favorites_results {
+  width: 88%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+  display: flex;
+  flex-direction: row;
+}
+
+#favoritos #favorites_results .my_favorites {
+  position: relative;
+  margin-right: 15px;
+  margin-top: 15px;
+}
+
+#favoritos #favorites_results img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+#favoritos #favorites_results .img_hover {
+  position: absolute;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #562ee5a8;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#favoritos #favorites_results .img_hover .icons_box {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#favoritos #favorites_results .img_hover .icons_box .fav_icon {
+  background: url(/assests/icon-fav.svg);
+  width: 32px;
+  height: 32px;
+  transition: all 0.3s ease-out;
+}
+
+#favoritos #favorites_results .img_hover .icons_box .fav_icon:hover {
+  background: url(/assests/icon-fav-hover.svg);
+}
+
+#favoritos #favorites_results .img_hover .icons_box .fav_icon .active {
+  background-image: url(/assests/icon-fav-active.svg) no-repeat;
+  background-position: center;
+  background-color: white;
+  border-radius: 6px;
+}
+
+#favoritos #favorites_results .img_hover .icons_box .download_icon {
+  background: url(/assests/icon-download.svg);
+  width: 32px;
+  height: 32px;
+  margin-left: 5px;
+}
+
+#favoritos #favorites_results .img_hover .icons_box .download_icon:hover {
+  background: url(/assests/icon-download-hover.svg);
+}
+
+#favoritos #favorites_results .img_hover .icons_box .expand_icon {
+  background: url(/assests/icon-max-normal.svg);
+  width: 32px;
+  height: 32px;
+  margin-left: 5px;
+}
+
+#favoritos #favorites_results .img_hover .icons_box .expand_icon:hover {
+  background: url(/assests/icon-max-hover.svg);
+}
+
+#favoritos #favorites_results .img_hover .text_box {
+  display: flex;
+  flex-direction: column;
+}
+
+#favoritos #favorites_results .img_hover .text_box p {
+  margin-top: 0;
+  text-align: left;
+}
+
+#btn_see_more_favorites {
+  display: none;
+  margin-bottom: 74px;
+  margin-top: 75px;
+}
+
+#no_results_fav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+#no_results_fav img {
+  margin-top: 20px;
+  width: 150px;
+  height: 150px;
+}
+
+#no_results_fav p {
+  width: 100%;
+  margin-top: 29px;
+  margin-bottom: 29px;
+  color: #50E3C2;
 }
 
 @media screen and (min-width: 1000px) {
-  #burger {
-    display: none;
+  #favoritos #favorites_results {
+    width: 60%;
+  }
+  #favoritos #favorites_results .my_favorites img {
+    width: 230px;
+    height: 230px;
   }
 }
 
-#logo a img {
-  width: 63px;
-  height: 60px;
-}
-
 #mis_gifos {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -924,6 +1027,108 @@ body.dark #results #modal #modal_text_buttons #modal_text p {
   width: 156px;
   height: 120px;
   background: #50E3C2;
+}
+
+#trending {
+  background: #F3F5F8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+}
+
+body.dark #trending {
+  background-color: #222326;
+}
+
+#trending h2 {
+  margin-top: 60px;
+  color: #572EE5;
+}
+
+#trending p {
+  margin-top: 7px;
+  margin-bottom: 25px;
+  width: 55%;
+}
+
+#trending #trending_modal {
+  width: 100%;
+}
+
+#trending #trending_modal #trending_gifs {
+  margin: 0px 15px 0px 15px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+#trending #trending_modal #trending_gifs img {
+  width: 244px;
+  height: 244px;
+}
+
+#trending #trending_modal .rigthbtn {
+  display: none;
+  align-self: center;
+  background-image: url(/assests/Button-Slider-right.svg);
+  width: 40px;
+  height: 40px;
+}
+
+#trending #trending_modal .rigthbtn:hover {
+  cursor: pointer;
+  background-image: url(/assests/Button-Slider-right-hover.svg);
+}
+
+body.dark #trending #trending_modal .rigthbtn {
+  background-image: url(/assests/button-slider-right-md-noct.svg);
+}
+
+body.dark #trending #trending_modal .rigthbtn:hover {
+  background-image: url(/assests/Button-Slider-right-hover-modo-noct-01.svg);
+}
+
+@media screen and (min-width: 800px) {
+  #trending h2 {
+    font-size: 25px;
+  }
+  #trending p {
+    font-size: 18px;
+  }
+  #trending #trending_modal {
+    display: flex;
+    width: 90%;
+    justify-content: center;
+  }
+  #trending #trending_modal .leftbtn {
+    display: flex;
+    margin-right: 10px;
+  }
+  #trending #trending_modal #trending_gifs {
+    margin: 0px 0px 100px 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  #trending #trending_modal .leftbtn {
+    display: none;
+    align-self: center;
+    background-image: url(/assests/button-slider-left.svg);
+    width: 40px;
+    height: 40px;
+  }
+  #trending #trending_modal .leftbtn:hover {
+    cursor: pointer;
+    background-image: url(/assests/button-slider-left-hover.svg);
+  }
+  body.dark #trending #trending_modal .leftbtn {
+    background-image: url(/assests/button-slider-left-md-noct.svg);
+  }
+  body.dark #trending #trending_modal .leftbtn:hover {
+    background-image: url(/assests/button-slider-left-hover-modo-noct-01.svg);
+  }
+  #trending #trending_modal .rigthbtn {
+    display: flex;
+  }
 }
 
 #crear #principal_container {
@@ -1023,110 +1228,6 @@ body.dark #results #modal #modal_text_buttons #modal_text p {
   }
 }
 
-#trending {
-  background: #F3F5F8;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-body.dark #trending {
-  background-color: #222326;
-}
-
-#trending h2 {
-  margin-top: 80px;
-  color: #572EE5;
-}
-
-#trending p {
-  margin-top: 7px;
-  width: 55%;
-}
-
-#trending #trending_modal {
-  display: flex;
-  justify-content: space-between;
-}
-
-#trending #trending_modal .leftbtn {
-  display: none;
-  align-self: center;
-  background-image: url(/assests/button-slider-left.svg);
-  width: 40px;
-  height: 40px;
-}
-
-#trending #trending_modal .leftbtn:hover {
-  cursor: pointer;
-  background-image: url(/assests/button-slider-left-hover.svg);
-}
-
-body.dark #trending #trending_modal .leftbtn {
-  background-image: url(/assests/button-slider-left-md-noct.svg);
-}
-
-body.dark #trending #trending_modal .leftbtn:hover {
-  background-image: url(/assests/button-slider-left-hover-modo-noct-01.svg);
-}
-
-#trending #trending_modal #trending_gifs {
-  margin-bottom: 100px;
-  justify-content: space-around;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-}
-
-#trending #trending_modal .rigthbtn {
-  display: none;
-  align-self: center;
-  background-image: url(/assests/Button-Slider-right.svg);
-  width: 40px;
-  height: 40px;
-}
-
-#trending #trending_modal .rigthbtn:hover {
-  cursor: pointer;
-  background-image: url(/assests/Button-Slider-right-hover.svg);
-}
-
-body.dark #trending #trending_modal .rigthbtn {
-  background-image: url(/assests/button-slider-right-md-noct.svg);
-}
-
-body.dark #trending #trending_modal .rigthbtn:hover {
-  background-image: url(/assests/Button-Slider-right-hover-modo-noct-01.svg);
-}
-
-@media screen and (min-width: 768px) {
-  #trending h2 {
-    font-size: 25px;
-  }
-  #trending p {
-    font-size: 18px;
-  }
-  #trending #trending_modal {
-    width: 88%;
-    justify-content: space-around;
-  }
-  #trending #trending_modal .leftbtn {
-    display: flex;
-  }
-  #trending #trending_modal #trending_gifs {
-    margin-bottom: 100px;
-    overflow-x: hidden;
-  }
-  #trending #trending_modal #trending_gifs .search_result {
-    display: flex;
-    justify-content: space-around;
-    width: 290px;
-    height: 227 px;
-  }
-  #trending #trending_modal .rigthbtn {
-    display: flex;
-  }
-}
-
 footer {
   display: flex;
   flex-direction: column;
@@ -1166,7 +1267,7 @@ footer p {
   margin-bottom: 23px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   footer {
     padding: 0px 80px 0px 80px;
     display: flex;

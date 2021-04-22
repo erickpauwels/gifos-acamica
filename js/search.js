@@ -1,4 +1,3 @@
-
 //----------------- Call API --------------------//
 
 async function getGif (text , offset ) {
@@ -60,9 +59,8 @@ function drawGif(data){
 }
 
 
-
 //--------------- Button Event SEE MORE ---------------- //
-let offset = 0;
+
 
 function seeMoreEvent () {
     
@@ -120,5 +118,4 @@ function drawTrendingText (trendingOptions) {
         })
     })
 }
-
 

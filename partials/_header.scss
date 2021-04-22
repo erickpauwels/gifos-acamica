@@ -18,19 +18,10 @@ header {
             .logo_mobile_dark {display: block;}
         }
     }
-    &.sticky_menu{
-        position: sticky;
-        top: 0px;
-        display:flex;
-        background: $clear;
-        body.dark & {
-            background: $darkmode;
-        }
-    }
     }
 // ---------------------NAV BAR -----------------------------------//
     nav{
-        display: none;  //Activar con burger
+        display: none; 
         &.menu_active {
         display: flex;
         flex-direction: column;

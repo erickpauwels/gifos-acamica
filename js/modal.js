@@ -13,7 +13,6 @@ moveRigthBtn.addEventListener ('click', () => {
 
 //---------------- EXPAND GIF ---------------------//
 function expand(gif, index) {
-    console.log(gif, index);
     let elements = gif[index];
     gifExpanded.src = elements.images.original.url;
     modalUser.textContent = elements.username == '' ? 'Unknown User': elements.username;
@@ -48,7 +47,7 @@ function changeText() {
     modalTitle.textContent = galleryGif[gifIndex].title;
 }
 
-function modalBtns(gif) {
+function modalBtns(url) {
     // create elements
     let favoriteBtn = document.createElement('div');
     let downloadBtn = document.createElement('div');
@@ -61,7 +60,7 @@ function modalBtns(gif) {
         addFavorite(galleryGif[gifIndex])
         favoriteBtn.style.backgroundImage = favoritesChecked(galleryGif[gifIndex]) ? "url(/assests/icon-trash-hover.svg)": '';
     });
-    //************************ */ PENDIENTE DOWNLOAD GIF **************//
-    // downloadBtn.addEventListener('click', () => downloadGif(url));
+    favoriteBtn.style.backgroundImage = favoritesChecked(galleryGif[gifIndex]) ? "url(/assests/icon-trash-hover.svg)": '';
+    downloadBtn.addEventListener('click', () =>  downloadGif(url));
 }
 modalBtns()

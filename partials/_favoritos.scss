@@ -1,43 +1,152 @@
-#favoritos {
+#favoritos{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    img{
-        margin-top: 5px;
-        margin-bottom: 7px;
-    }
-    h1 {
-        @extend %font-h1;
-        color: $main;
-        margin-bottom: 46px;
-    }
-    #favoritos_container {
+    margin-bottom: 50px;
+    #favorite_header{
         display: flex;
-        flex-flow: row wrap;
+        flex-direction: column;
+        align-items: center;
+            img{
+                width: 25px;
+                height: 25px;
+                margin-bottom: 10px;
+                }
+            h1 {
+                @extend %font-h1;
+                color: $main;
+                margin-bottom: 46px;
+                body.dark & {
+                    color: $clear;
+                }
+            }
+    }
+    #favorites_results{
+        // @extend %results-hover-mobile; 
+        width: 88%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
         justify-content: space-around;
-
-        width: 100%;
-        .favorite_gif{
-            margin-bottom: 25px;
-            width: 156px;
-            height: 120px;
-            background: $secondary;
+        align-content: space-around;  
+        display: flex;
+        flex-direction: row;
+        .my_favorites{
+            position: relative;
+            margin-right: 15px;
+            margin-top:15px ;
+            }
+            img{
+                width: 150px;
+                height: 150px;
+                object-fit:cover; 
+            }
+            .img_hover{
+                position: absolute;
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: space-between;
+                align-items: flex-start;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color:$hover;
+                padding: 10px;
+                cursor: pointer;
+                .icons_box {
+                    display: flex;
+                    width: 100%;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    .fav_icon{
+                        background: url(/assests/icon-fav.svg);
+                        width: 32px;
+                        height: 32px;
+                        transition: all 0.3s ease-out;
+                        &:hover{
+                            background: url(/assests/icon-fav-hover.svg);
+                            
+                        }
+                        .active{
+                            background-image: url(/assests/icon-fav-active.svg) no-repeat;
+                            background-position: center;
+                            background-color: $clear;
+                            border-radius: 6px;
+                        }
+                        
+                    }
+                    
+                    .download_icon {
+                        background: url(/assests/icon-download.svg);
+                        width: 32px;
+                        height: 32px;
+                        margin-left: 5px;
+                        &:hover{
+                            background: url(/assests/icon-download-hover.svg);
+                        }
+                    }
+                    .expand_icon {
+                        background: url(/assests/icon-max-normal.svg);
+                        width: 32px;
+                        height: 32px;
+                        margin-left: 5px;
+                        &:hover{
+                            background: url(/assests/icon-max-hover.svg);
+                        }
+                    }
+                }
+                .text_box{ 
+                    display: flex;
+                    flex-direction: column;
+                    p{
+                        margin-top: 0;
+                        @extend %hover-text;
+                        text-align: left;
+                    }
+                }
+            }
         }
     }
-    .button_ver_mas {
+    #btn_see_more_favorites{
+        display: none;
+        margin-bottom: 74px;
+        margin-top: 75px;
         @extend %button_ver_mas;
     }
-}
+        // no results 
+    #no_results_fav{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+            img {
+                margin-top: 20px;
+                width: 150px;
+                height: 150px;
+            }
+            p {
+                width: 100%;
+                margin-top:29px;
+                margin-bottom: 29px;
+                @extend  %font-h1;
+                color: $secondary;
+            }
+        }
 
-// media querys
 
-@include desktop{
-    #burger {
-        display: none;
+//----------------- media querys----------------//
+
+@include desktop {
+    #favoritos{
+        #favorites_results{
+            width: 60%;
+            .my_favorites{
+                img{
+                    width: 230px;
+                    height: 230px;
+                }
+            }
+        }     
     }
-}
-#logo a img{
-    width: 63px;
-    height: 60px;
-}
+}        

@@ -4,15 +4,16 @@
      align-content: center;
      transition: .3s ease all;
      #search_result{
+        @extend %results-hover-mobile; 
          width: 88%;
          margin: 0 auto;
          display: flex;
          flex-wrap: wrap;
          justify-content: space-around;
          align-content: space-around;
-         @extend %results-hover-mobile; 
      }
     .hr {
+        display: none;
     margin: 0 auto;
     height: 1px;
     width: 157px;
@@ -37,8 +38,8 @@
         display: none;
         margin: 0 auto;
         @extend %button_ver_mas;
-        margin-bottom: 35px;
-        margin-top:35px;
+        margin-bottom: 74px;
+        margin-top:75px;
         transition: .3s ease all;
     }
     // NO RESULT
@@ -59,6 +60,7 @@
             color: $secondary;
         }
     }
+}
     //-------------- MODAL ---------//
     #modal{
         display: none;
@@ -102,7 +104,7 @@
                 }
             }
             #gif_expanded{
-                margin: 25px;
+                margin: 25px 20px 5px 20px;
                 width: 318px;
                 height: 245px;
                 object-fit: contain;
@@ -172,8 +174,7 @@
             }
         }
     }
- 
-}
+
 
 
 // ---------------- Media querys----------------------//
@@ -182,8 +183,7 @@
    #results{
        display: flex;
        margin: 0;
-       padding: 0;
-       
+       padding: 0;      
        hr{
            width: 25%;
        }
@@ -196,7 +196,47 @@
        #no_result{
            display: none;
        }
+       #search_result {
+        display: flex;
+        margin-top: 70px;
+        position: relative;
+        .search_result{
+            position: relative;
+            margin-right: 15px;
+            margin-top: 17px; 
+            img {
+                flex-flow: row wrap;
+                justify-content: space-around;  
 
+                width: 244px;
+                height: 244px;
+                }
+                .img_hover{
+                    .icons_box {
+                        .fav_icon{
+                            width: 32px;
+                            height: 32px;
+                        }
+                        .download_icon {
+                            width: 32px;
+                            height: 32px;
+                            margin-left: 10px;
+                        }
+                        .expand_icon {
+                            width: 32px;
+                            height: 32px;
+                            margin-left: 10px;
+                        }
+                    }
+                    .text_box{
+                        p{
+                            font-size: 15px;
+                            line-height: 18px;
+                        }
+            }
+        }
+   }
+}}
    // MODAL 
    #modal{
        display: none;
@@ -258,4 +298,4 @@
         }
     }
 }
-   }}
+}
