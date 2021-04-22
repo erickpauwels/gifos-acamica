@@ -10,7 +10,6 @@ Con esto pueden deslizar los gifs haciendo scroll con el touch  */
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 20px;
-  font-style: bold;
   text-align: center;
   line-height: 33px;
 }
@@ -134,7 +133,7 @@ body.dark #results .button_ver_mas:hover, #results body.dark .button_ver_mas:hov
 }
 
 #results #search_result .img_hover .icons_box .fav_icon .active, #trending #trending_modal #trending_gifs .img_hover .icons_box .fav_icon .active {
-  background-image: url(/assests/icon-fav-active.svg) no-repeat;
+  background: url(/assests/icon-fav-active.svg) no-repeat;
   background-position: center;
   background-color: white;
   border-radius: 6px;
@@ -363,14 +362,14 @@ body.dark #hamburger_menu.hamburguer_active {
     cursor: pointer;
   }
   header nav ul li:hover {
-    text-decoration: underline solid 3px #50E3C2;
+    text-decoration: underline solid #50E3C2;
   }
   header nav ul li a {
     font-size: 14px;
     color: #572EE5;
   }
   header nav ul li a:hover {
-    text-decoration: underline solid 3px #50E3C2;
+    text-decoration: underline solid #50E3C2;
   }
   header nav ul li a:hover:active {
     color: #9CAFC3;
@@ -709,7 +708,7 @@ body.dark #modal #modal_text_buttons #modal_text p {
 }
 
 #modal #modal_text_buttons #modal_buttons .fav_modal .active {
-  background-image: url(/assests/icon-fav-active.svg) no-repeat;
+  background: url(/assests/icon-fav-active.svg) no-repeat;
   background-position: center;
   background-color: white;
   border-radius: 6px;
@@ -924,7 +923,7 @@ body.dark #favoritos #favorite_header h1 {
 }
 
 #favoritos #favorites_results .img_hover .icons_box .fav_icon .active {
-  background-image: url(/assests/icon-fav-active.svg) no-repeat;
+  background: url(/assests/icon-fav-active.svg) no-repeat;
   background-position: center;
   background-color: white;
   border-radius: 6px;
@@ -1192,7 +1191,7 @@ body.dark #trending #trending_modal .rigthbtn:hover {
 }
 
 #crear #secondary_container #numbers .steps {
-  font: size 18px;
+  font-size: 18px;
   padding: 6px 18px;
   border: 1px solid #572EE5;
   border-radius: 100%;

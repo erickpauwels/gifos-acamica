@@ -139,13 +139,13 @@ header {
                     list-style: none;
                     cursor: pointer;
                     &:hover{
-                    text-decoration:underline solid 3px $secondary;
+                    text-decoration:underline solid $secondary;
                     }
                     a{  
                         font-size: 14px;
                         color: $main;
                         &:hover {
-                            text-decoration:underline solid 3px $secondary;
+                            text-decoration:underline solid $secondary;
                         &:active{
                             color: $active;
                              }

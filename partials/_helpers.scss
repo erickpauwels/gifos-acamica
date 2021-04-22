@@ -4,7 +4,7 @@
     font-family: $montserrat;
     font-weight: 700;
     font-size: 20px;
-    font-style: bold;
+    // font-style: bold;
     text-align: center;
     line-height: 33px;
 }
@@ -120,7 +120,7 @@
                             
                         }
                         .active{
-                            background-image: url(/assests/icon-fav-active.svg) no-repeat;
+                            background: url(/assests/icon-fav-active.svg) no-repeat;
                             background-position: center;
                             background-color: $clear;
                             border-radius: 6px;
