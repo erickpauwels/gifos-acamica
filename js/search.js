@@ -11,6 +11,7 @@ async function getGif (text , offset ) {
 searchButton.addEventListener('click', (event) => {
     // Click EVENT 
     event.preventDefault();
+    suggestionList.innerHTML = '';
     console.log(searchInput.value);
     localStorage.setItem("inputValue", JSON.stringify(searchInput.value));
     // Call Draw Function 
@@ -52,7 +53,6 @@ function drawGif(data){
             containerResults.appendChild(div)
             // display hr
             hr.style.display = 'block';
-            console.log(searchInput.value);
         });
      // NO RESULTS
     (gif.length === 0) ? (noResults.style.display = 'flex')  && (btnSeeMore.style.display= 'none') : (noResults.style.display = 'none');
@@ -63,14 +63,12 @@ function drawGif(data){
 
 
 function seeMoreEvent () {
-    
     btnSeeMore.addEventListener('click', () => {
         let getValue = JSON.parse(localStorage.getItem('inputValue'));
         offset += 12;
         getGif(getValue, offset).then(
             resp => drawGif(resp)
-        )
-        
+        ) 
 })}
 seeMoreEvent ()
 // ------------------TRENDING TEXT ON SEARCH SECTION ---------------------- //
@@ -78,7 +76,6 @@ seeMoreEvent ()
 async function getTrendingP () {
     let response = await fetch(`https://api.giphy.com/v1/trending/searches?api_key=${apiKey}`);
     let trendingOptions = await response.json();
-    console.log(trendingOptions.data.slice(0,5));
     return trendingOptions.data.slice(0,5);
 }
 
@@ -106,7 +103,6 @@ function drawTrendingText (trendingOptions) {
         spam.addEventListener('click', (event) =>{
             event.preventDefault(spam);
             localStorage.setItem("inputValue", JSON.stringify(trending));
-            console.log(trending);
             getGif(trending).then(
                 gif => drawGif(gif)
             )

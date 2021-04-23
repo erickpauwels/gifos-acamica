@@ -14,7 +14,7 @@ Con esto pueden deslizar los gifs haciendo scroll con el touch  */
   line-height: 33px;
 }
 
-#search .search_gifos input, #trending p, #crear #principal_container #crear_container p, footer p {
+#search .search_gifos #input_box input, #suggestions_input .li_suggestions, #trending p, #crear #principal_container #crear_container p, footer p {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   color: #000000;
@@ -122,43 +122,43 @@ body.dark #results .button_ver_mas:hover, #results body.dark .button_ver_mas:hov
 }
 
 #results #search_result .img_hover .icons_box .fav_icon, #trending #trending_modal #trending_gifs .img_hover .icons_box .fav_icon {
-  background: url(/assests/icon-fav.svg);
+  background: url("/assests/icon-fav.svg");
   width: 32px;
   height: 32px;
   transition: all 0.3s ease-out;
 }
 
 #results #search_result .img_hover .icons_box .fav_icon:hover, #trending #trending_modal #trending_gifs .img_hover .icons_box .fav_icon:hover {
-  background: url(/assests/icon-fav-hover.svg);
+  background: url("/assests/icon-fav-hover.svg");
 }
 
 #results #search_result .img_hover .icons_box .fav_icon .active, #trending #trending_modal #trending_gifs .img_hover .icons_box .fav_icon .active {
-  background: url(/assests/icon-fav-active.svg) no-repeat;
+  background: url("/assests/icon-fav-active.svg") no-repeat;
   background-position: center;
   background-color: white;
   border-radius: 6px;
 }
 
 #results #search_result .img_hover .icons_box .download_icon, #trending #trending_modal #trending_gifs .img_hover .icons_box .download_icon {
-  background: url(/assests/icon-download.svg);
+  background: url("/assests/icon-download.svg");
   width: 32px;
   height: 32px;
   margin-left: 5px;
 }
 
 #results #search_result .img_hover .icons_box .download_icon:hover, #trending #trending_modal #trending_gifs .img_hover .icons_box .download_icon:hover {
-  background: url(/assests/icon-download-hover.svg);
+  background: url("/assests/icon-download-hover.svg");
 }
 
 #results #search_result .img_hover .icons_box .expand_icon, #trending #trending_modal #trending_gifs .img_hover .icons_box .expand_icon {
-  background: url(/assests/icon-max-normal.svg);
+  background: url("/assests/icon-max-normal.svg");
   width: 32px;
   height: 32px;
   margin-left: 5px;
 }
 
 #results #search_result .img_hover .icons_box .expand_icon:hover, #trending #trending_modal #trending_gifs .img_hover .icons_box .expand_icon:hover {
-  background: url(/assests/icon-max-hover.svg);
+  background: url("/assests/icon-max-hover.svg");
 }
 
 #results #search_result .img_hover .text_box, #trending #trending_modal #trending_gifs .img_hover .text_box {
@@ -290,7 +290,7 @@ nav.menu_active ul li a {
 }
 
 #hamburger_menu {
-  background-image: url(/assests/burger.svg);
+  background-image: url("/assests/burger.svg");
   background-repeat: no-repeat;
   width: 15px;
   height: 15px;
@@ -298,15 +298,15 @@ nav.menu_active ul li a {
 }
 
 body.dark #hamburger_menu {
-  background-image: url(/assests/burger-modo-noct.svg);
+  background-image: url("/assests/burger-modo-noct.svg");
 }
 
 #hamburger_menu.hamburguer_active {
-  background-image: url(../assests/close.svg);
+  background-image: url("/assests/close.svg");
 }
 
 body.dark #hamburger_menu.hamburguer_active {
-  background-image: url(/assests/close-modo-noct.svg);
+  background-image: url("/assests/close-modo-noct.svg");
 }
 
 @media screen and (min-width: 800px) {
@@ -382,25 +382,25 @@ body.dark #hamburger_menu.hamburguer_active {
   }
   .cta .plus_button {
     display: flex;
-    background-image: url(/assests/button-crear-gifo.svg);
+    background-image: url("/assests/button-crear-gifo.svg");
     background-repeat: no-repeat;
     width: 54px;
     height: 54px;
   }
   .cta .plus_button:hover {
-    background-image: url(/assests/CTA-crear-gifo-hover.svg);
+    background-image: url("/assests/CTA-crear-gifo-hover.svg");
   }
   .cta .plus_button:active {
-    background-image: url(/assests/CTA-crear-gifo-active.svg);
+    background-image: url("/assests/CTA-crear-gifo-active.svg");
   }
   body.dark .cta .plus_button {
-    background-image: url(/assests/CTA-crear-gifo-modo-noc.svg);
+    background-image: url("/assests/CTA-crear-gifo-modo-noc.svg");
   }
   body.dark .cta .plus_button:hover {
-    background-image: url(/assests/CTA-crear-gifo-hover-modo-noc.svg);
+    background-image: url("/assests/CTA-crear-gifo-hover-modo-noc.svg");
   }
   body.dark .cta .plus_button:active {
-    background-image: url(/assests/CTA-crear-gifo-active-modo-noc.svg);
+    background-image: url("/assests/CTA-crear-gifo-active-modo-noc.svg");
   }
 }
 
@@ -432,50 +432,58 @@ body.dark #search h1 {
 #search .search_gifos {
   display: flex;
   width: 90%;
+  flex-direction: column;
   max-width: 551px;
-  height: 50px;
+  height: auto;
+  margin-top: 10p;
   border: 1px solid #572EE5;
   border-radius: 27px;
-  padding: 5px 20px 5px 55px;
-  justify-content: space-between;
-  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  justify-content: space-around;
 }
 
 body.dark #search .search_gifos {
   border: 1px solid white;
 }
 
-#search .search_gifos input {
+#search .search_gifos #input_box {
+  display: flex;
+}
+
+#search .search_gifos #input_box input {
   width: 85%;
   text-align: start;
   border: none;
+  margin-left: 35px;
   background-color: transparent;
   box-shadow: none;
 }
 
-#search .search_gifos input:focus {
+#search .search_gifos #input_box input:focus {
   outline: none;
   background-color: transparent;
   box-shadow: none;
 }
 
-body.dark #search .search_gifos input {
+body.dark #search .search_gifos #input_box input {
   color: white;
 }
 
-#search .search_gifos #search_button {
+#search .search_gifos #input_box #search_button {
   width: 20px;
   height: 20px;
+  margin-right: 20px;
   cursor: pointer;
   border: none;
   background: none;
   outline: none;
-  background-image: url(/assests/icon-search.svg);
+  background-image: url("/assests/icon-search.svg");
   background-repeat: no-repeat;
 }
 
-body.dark #search .search_gifos #search_button {
-  background-image: url(/assests/icon-search-mod-noc.svg);
+body.dark #search .search_gifos #input_box #search_button {
+  background-image: url("/assests/icon-search-mod-noc.svg");
 }
 
 #search .trending_text {
@@ -503,6 +511,49 @@ body.dark #search .trending_text {
 
 body.dark #search .trending_text .spam {
   color: white;
+}
+
+#suggestions_input {
+  width: 89.1%;
+  margin: 0 auto;
+}
+
+#suggestions_input .hr_suggestions {
+  width: 95%;
+  margin: 8px auto 5px;
+  opacity: 0.5;
+  color: #9CAFC3;
+}
+
+#suggestions_input .li_suggestions {
+  margin: 10px 7% 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  font-size: rem(16px);
+  color: #9CAFC3;
+  text-align: left;
+  transition: all 0.3s ease-out;
+}
+
+#suggestions_input .li_suggestions:hover {
+  color: #572EE5;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+body.dark #suggestions_input .li_suggestions {
+  color: rgba(233, 233, 233, 0.932);
+}
+
+#suggestions_input .li_suggestions .spam_lupa {
+  background-image: url("/assests/icon-search-grey.svg");
+  width: 15.8px;
+  height: 15.8px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 5px;
 }
 
 @media screen and (min-width: 800px) {
@@ -622,11 +673,11 @@ body.dark #modal {
   margin-right: 10%;
   align-self: flex-end;
   cursor: pointer;
-  background-image: url(/assests/close.svg);
+  background-image: url("/assests/close.svg");
 }
 
 body.dark #modal .close_modal {
-  background-image: url(/assests/close-modo-noct.svg);
+  background-image: url("/assests/close-modo-noct.svg");
 }
 
 #modal #modal_container {
@@ -637,14 +688,14 @@ body.dark #modal .close_modal {
 
 #modal #modal_container .left_div {
   display: none;
-  background-image: url(/assests/button-slider-left.svg);
+  background-image: url("/assests/button-slider-left.svg");
   width: 40px;
   height: 40px;
 }
 
 #modal #modal_container .left_div:hover {
   cursor: pointer;
-  background-image: url(/assests/button-slider-left-hover.svg);
+  background-image: url("/assests/button-slider-left-hover.svg");
 }
 
 #modal #modal_container #gif_expanded {
@@ -656,14 +707,14 @@ body.dark #modal .close_modal {
 
 #modal #modal_container .rigth_div {
   display: none;
-  background-image: url(/assests/Button-Slider-right.svg);
+  background-image: url("/assests/Button-Slider-right.svg");
   width: 40px;
   height: 40px;
 }
 
 #modal #modal_container .rigth_div:hover {
   cursor: pointer;
-  background-image: url(/assests/Button-Slider-right-hover.svg);
+  background-image: url("/assests/Button-Slider-right-hover.svg");
 }
 
 #modal #modal_text_buttons {
@@ -696,33 +747,33 @@ body.dark #modal #modal_text_buttons #modal_text p {
 }
 
 #modal #modal_text_buttons #modal_buttons .fav_modal {
-  background: url(/assests/icon-fav.svg);
+  background: url("/assests/icon-fav.svg");
   width: 32px;
   height: 32px;
   transition: all 0.3s ease-out;
 }
 
 #modal #modal_text_buttons #modal_buttons .fav_modal:hover {
-  background: url(/assests/icon-fav-hover.svg);
+  background: url("/assests/icon-fav-hover.svg");
   cursor: pointer;
 }
 
 #modal #modal_text_buttons #modal_buttons .fav_modal .active {
-  background: url(/assests/icon-fav-active.svg) no-repeat;
+  background: url("/assests/icon-fav-active.svg") no-repeat;
   background-position: center;
   background-color: white;
   border-radius: 6px;
 }
 
 #modal #modal_text_buttons #modal_buttons .download_modal {
-  background: url(/assests/icon-download.svg);
+  background: url("/assests/icon-download.svg");
   width: 32px;
   height: 32px;
   margin-left: 5px;
 }
 
 #modal #modal_text_buttons #modal_buttons .download_modal:hover {
-  background: url(/assests/icon-download-hover.svg);
+  background: url("/assests/icon-download-hover.svg");
   cursor: pointer;
 }
 
@@ -789,19 +840,19 @@ body.dark #modal #modal_text_buttons #modal_text p {
   }
   #modal #modal_container .left_div {
     display: block;
-    background-image: url(/assests/button-slider-left.svg);
+    background-image: url("/assests/button-slider-left.svg");
     width: 40px;
     height: 40px;
   }
   #modal #modal_container .left_div:hover {
     cursor: pointer;
-    background-image: url(/assests/button-slider-left-hover.svg);
+    background-image: url("/assests/button-slider-left-hover.svg");
   }
   body.dark #modal #modal_container .left_div {
-    background-image: url(/assests/button-slider-left-md-noct.svg);
+    background-image: url("/assests/button-slider-left-md-noct.svg");
   }
   body.dark #modal #modal_container .left_div:hover {
-    background-image: url(/assests/button-slider-left-hover-modo-noct-01.svg);
+    background-image: url("/assests/button-slider-left-hover-modo-noct-01.svg");
   }
   #modal #modal_container #gif_expanded {
     margin: 25px;
@@ -811,19 +862,19 @@ body.dark #modal #modal_text_buttons #modal_text p {
   }
   #modal #modal_container .rigth_div {
     display: block;
-    background-image: url(/assests/Button-Slider-right.svg);
+    background-image: url("/assests/Button-Slider-right.svg");
     width: 40px;
     height: 40px;
   }
   #modal #modal_container .rigth_div:hover {
     cursor: pointer;
-    background-image: url(/assests/Button-Slider-right-hover.svg);
+    background-image: url("/assests/Button-Slider-right-hover.svg");
   }
   body.dark #modal #modal_container .rigth_div {
-    background-image: url(/assests/button-slider-right-md-noct.svg);
+    background-image: url("/assests/button-slider-right-md-noct.svg");
   }
   body.dark #modal #modal_container .rigth_div:hover {
-    background-image: url(/assests/Button-Slider-right-hover-modo-noct-01.svg);
+    background-image: url("/assests/Button-Slider-right-hover-modo-noct-01.svg");
   }
   #modal #modal_text_buttons {
     display: flex;
@@ -912,43 +963,43 @@ body.dark #favoritos #favorite_header h1 {
 }
 
 #favoritos #favorites_results .img_hover .icons_box .fav_icon {
-  background: url(/assests/icon-fav.svg);
+  background: url("/assests/icon-fav.svg");
   width: 32px;
   height: 32px;
   transition: all 0.3s ease-out;
 }
 
 #favoritos #favorites_results .img_hover .icons_box .fav_icon:hover {
-  background: url(/assests/icon-fav-hover.svg);
+  background: url("/assests/icon-fav-hover.svg");
 }
 
 #favoritos #favorites_results .img_hover .icons_box .fav_icon .active {
-  background: url(/assests/icon-fav-active.svg) no-repeat;
+  background: url("/assests/icon-fav-active.svg") no-repeat;
   background-position: center;
   background-color: white;
   border-radius: 6px;
 }
 
 #favoritos #favorites_results .img_hover .icons_box .download_icon {
-  background: url(/assests/icon-download.svg);
+  background: url("/assests/icon-download.svg");
   width: 32px;
   height: 32px;
   margin-left: 5px;
 }
 
 #favoritos #favorites_results .img_hover .icons_box .download_icon:hover {
-  background: url(/assests/icon-download-hover.svg);
+  background: url("/assests/icon-download-hover.svg");
 }
 
 #favoritos #favorites_results .img_hover .icons_box .expand_icon {
-  background: url(/assests/icon-max-normal.svg);
+  background: url("/assests/icon-max-normal.svg");
   width: 32px;
   height: 32px;
   margin-left: 5px;
 }
 
 #favoritos #favorites_results .img_hover .icons_box .expand_icon:hover {
-  background: url(/assests/icon-max-hover.svg);
+  background: url("/assests/icon-max-hover.svg");
 }
 
 #favoritos #favorites_results .img_hover .text_box {

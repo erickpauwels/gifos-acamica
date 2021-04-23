@@ -111,16 +111,16 @@
                     flex-direction: row;
                     justify-content: flex-end;
                     .fav_icon{
-                        background: url(/assests/icon-fav.svg);
+                        background: url('/assests/icon-fav.svg');
                         width: 32px;
                         height: 32px;
                         transition: all 0.3s ease-out;
                         &:hover{
-                            background: url(/assests/icon-fav-hover.svg);
+                            background: url('/assests/icon-fav-hover.svg');
                             
                         }
                         .active{
-                            background: url(/assests/icon-fav-active.svg) no-repeat;
+                            background: url('/assests/icon-fav-active.svg') no-repeat;
                             background-position: center;
                             background-color: $clear;
                             border-radius: 6px;
@@ -129,21 +129,21 @@
                     }
                     
                     .download_icon {
-                        background: url(/assests/icon-download.svg);
+                        background: url('/assests/icon-download.svg');
                         width: 32px;
                         height: 32px;
                         margin-left: 5px;
                         &:hover{
-                            background: url(/assests/icon-download-hover.svg);
+                            background: url('/assests/icon-download-hover.svg');
                         }
                     }
                     .expand_icon {
-                        background: url(/assests/icon-max-normal.svg);
+                        background: url('/assests/icon-max-normal.svg');
                         width: 32px;
                         height: 32px;
                         margin-left: 5px;
                         &:hover{
-                            background: url(/assests/icon-max-hover.svg);
+                            background: url('/assests/icon-max-hover.svg');
                         }
                     }
                 }

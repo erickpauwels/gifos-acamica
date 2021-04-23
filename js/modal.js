@@ -14,7 +14,7 @@ moveRigthBtn.addEventListener ('click', () => {
 //---------------- EXPAND GIF ---------------------//
 function expand(gif, index) {
     let elements = gif[index];
-    gifExpanded.src = elements.images.original.url;
+    gifExpanded.src = elements.images.downsized.url;
     modalUser.textContent = elements.username == '' ? 'Unknown User': elements.username;
     modalTitle.textContent = elements.title;
     modal.style.display = 'flex';
@@ -58,9 +58,9 @@ function modalBtns(url) {
     modalButtons.append(favoriteBtn, downloadBtn);
     favoriteBtn.addEventListener('click', () => {
         addFavorite(galleryGif[gifIndex])
-        favoriteBtn.style.backgroundImage = favoritesChecked(galleryGif[gifIndex]) ? "url(/assests/icon-trash-hover.svg)": '';
+        favoriteBtn.style.backgroundImage = favoritesChecked(galleryGif[gifIndex]) ? "url(assests/icon-trash-hover.svg)": '';
     });
-    favoriteBtn.style.backgroundImage = favoritesChecked(galleryGif[gifIndex]) ? "url(/assests/icon-trash-hover.svg)": '';
+    favoriteBtn.style.backgroundImage = favoritesChecked(galleryGif[gifIndex]) ? "url(assests/icon-trash-hover.svg)": '';
     downloadBtn.addEventListener('click', () =>  downloadGif(url));
 }
 modalBtns()

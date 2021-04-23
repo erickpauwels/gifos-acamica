@@ -16,7 +16,7 @@ getTrendings().then(
 function drawTrendingGif(data){ 
     trendingContainer.innerHTML = '';
     // call element
-    let gif = data.data.slice(0,20);
+    let gif = data.data.slice(0,3);
     gif.forEach(
         (element, index) => {
             // create element 

@@ -18,7 +18,8 @@ let crearSection = document.getElementById('crear');
 
 let searchInput = document.getElementById('search_input');
 let searchButton = document.getElementById('search_button');
-let suggestionList = document.getElementById('suggestion_list');
+let suggestionList = document.getElementById('suggestions_input');
+let searchGifos = document.getElementById('search_gifos');
 let searchText = document.getElementById('search_text');
 let trendingP = document.getElementById('trending_p');
 

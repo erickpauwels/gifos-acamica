@@ -14,10 +14,10 @@
     <header>
         <!-- LOGO -->
         <div id="logos">
-            <a href="/Index.html"><img class="logo_desktop" src="/assests/logo-desktop-01.png" alt="Gifos logo Desktop"></a>
-            <a href="/Index.html"><img class="logo_mobile" src="/assests/logo-mobile.png" alt="Gifos logo Mobile"></a>
-            <a href="/Index.html"><img class="logo_desktop_dark" src="/assests/Logo-modo-noc-01.png" alt="Gifos logo Dark Mode Desktop"></a>
-            <a href="/Index.html"><img class="logo_mobile_dark" src="/assests/logo-mobile-modo-noct-01.png" alt="Gifos logo Dark Mode Mobile"></a>
+            <a href="/Index.html"><img class="logo_desktop" src="assests/logo-desktop-01.png" alt="Gifos logo Desktop"></a>
+            <a href="/Index.html"><img class="logo_mobile" src="assests/logo-mobile.png" alt="Gifos logo Mobile"></a>
+            <a href="/Index.html"><img class="logo_desktop_dark" src="assests/Logo-modo-noc-01.png" alt="Gifos logo Dark Mode Desktop"></a>
+            <a href="/Index.html"><img class="logo_mobile_dark" src="assests/logo-mobile-modo-noct-01.png" alt="Gifos logo Dark Mode Mobile"></a>
         </div>
         <!-- HAMBURGUER MENU  -->
         <div id="hamburger_menu"></div>
@@ -36,12 +36,15 @@
         <h1>Inspírate, busca, guarda, y crea los mejores <span>GIFOS</span></h1>
         <img class="main_img" src="assests/ilustra_header.svg" alt="saludo header">
         <!-- SEARCH GIFS  -->
-        <form class="search_gifos">
+        <form id="search_gifos" class="search_gifos">
+            <div id="input_box">
             <input id="search_input" autocomplete="off" type="text" placeholder="Busca Gifos y más">
             <button id="search_button" class="search_button"></button>
+            </div>
+            <!-- SUGGESTION LIST -->
+            <ul id="suggestions_input"></ul>
         </form>
-        <!-- SUGGESTION LIST -->
-        <ul id="suggestion_list"></ul>
+        
         <!-- TRENDING SUGGESTIONS -->
         <div class="trending_text">
             <h3>Trending:</h3>
@@ -53,7 +56,7 @@
         <h2 id="search_text"></h2>
         <!-- NO RESULTS -->
         <div id="no_results" class="no_results">
-            <img src="/assests/icon-busqueda-sin-resultado.svg" alt="">
+            <img src="assests/icon-busqueda-sin-resultado.svg" alt="">
             <p>Intenta con otra búsqueda.</p>
         </div>
         <!-- SEARCH RESULTS -->
@@ -113,6 +116,7 @@
     <script src="./js/darkmode.js"></script>
     <script src="./js/trending.js"></script>
     <script src="./js/search.js"></script>
+    <script src="./js/suggestions.js"></script>
     <script src="./js/hovers.js"></script>
     <script src="./js/modal.js"></script>
     <script src="./js/favoritos.js"></script>
