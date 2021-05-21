@@ -107,8 +107,8 @@ function pad(val) {
 endBTn.addEventListener('click', () =>{
     number2.classList.remove('step_selected');
     number3.classList.add('step_selected');
-    uploadBTn.style.display ='block';
     recorder.stopRecording();
+    uploadBTn.style.display ='block';
     endBTn.style.display ='none';
     timer.style.display = "none";
     // Repear caption 
