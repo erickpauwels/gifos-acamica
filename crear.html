@@ -24,13 +24,15 @@
         <!-- NAV MENU -->
         <nav id="menu_mobile">
             <ul>
-                <li id="darkmode" class="darkmode">Modo Nocturno</li><hr id="burger_menu_border">
-                <li><a href="/favoritos.html">Favoritos</a></li>
-                <li><a href="/misgifos.html">Mis Gifos</a></li>
+                <li id="darkmode" class="darkmode">Modo Nocturno</li>
+                <!-- <hr id="burger_menu_border"> -->
+                <li id="favorites_section" ><a href="/favorites.html">Favoritos</a></li>
+                <li id="mis_gifos_section">Mis Gifos</li>
                 <li class="cta"><a class="plus_button" href="/crear.html"></a></li>
             </ul>
         </nav>
     </header>
+    <!-- CREAR SECTION  -->
     <section id="crear">
         <div id="principal_container">
             <div id="camara_completa">
@@ -43,21 +45,41 @@
                 </div>
             <img class="luz_camara" src="assests/element-luz-camara.svg" alt="camara">
             </div>
-            <div id="crear_container">
-                <h1>Aquí podrás crear tus propios <span >GIFOS</span></h1>
-                <p>¡Crea tu GIFO en sólo 3 pasos!</p>
-                <p>(sólo necesitas una cámara para grabar un video)</p>
+            <div id="crear_container" class="crear_container">
+                <video id="video" class="video_box"></video>
+                <div id="text_box">
+                    <h1>Aquí podrás crear tus propios <span >GIFOS</span></h1>
+                    <p>¡Crea tu GIFO en sólo 3 pasos!</p>
+                    <p>(sólo necesitas una cámara para grabar un video)</p>
+                </div>
             </div>
             <img class="pelicula" src="assests/pelicula.svg" alt="pelicula">
         </div>
         <div id="secondary_container">
-            <div id="numbers">
-                <div class="steps" id="step1">1</div>
-                <div class="steps" id="step2">2</div>
-                <div class="steps" id="step3">3</div>
-            </div>
-            <div class="block"></div>
-            <div class="btn"><a href="#">COMENZAR</a></div>
+                <!-- Numbers  -->
+                <div id="steps_container">
+                        <div id="numbers">
+                            <div class="steps" id="number1">1</div>
+                            <div class="steps" id="number2">2</div>
+                            <div class="steps" id="number3">3</div>
+                        </div>
+                        <!-- TIMER  -->
+                        <div id="timer" class="timer-container">
+                            <p id="hours">00</p>
+                            <p>:</p>
+                            <p id="minutes">00</p>
+                            <p>:</p>
+                            <p id="seconds">00</p>
+                        </div>
+                        <p id="repeat" class="repeat">REPETIR CAPTURA</p>
+                </div>
+                <!-- Block  -->
+                <div class="block"></div>
+                <!-- BUTTONS -->                
+                <div id="start_btn" class="start_btn">COMENZAR</div>
+                <div id="record_btn" class="start_btn">GRABAR</div>
+                <div id="end_btn" class="start_btn">FINALIZAR</div>
+                <div id="upload_btn" class="start_btn">SUBIR GIFO</div>
         </div>
     </section> 
     <footer>
@@ -71,9 +93,11 @@
     </footer>
     <script src="./js/variables.js"></script>
     <script src="./js/darkmode.js"></script>
-    <script src="./js/hovers.js"></script>
-    <script src="./js/search.js"></script>
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <script src="./js/crear.js"></script>
+    <!-- <script src="./js/hovers.js"></script> -->
+    <!-- <script src="./js/search.js"></script> -->
     <script src="./js/menu.js"></script>
-    <script src="./js/suggestions.js"></script>
+    <!-- <script src="./js/suggestions.js"></script> -->
 </body>
 </html>

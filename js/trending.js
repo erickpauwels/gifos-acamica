@@ -16,7 +16,16 @@ getTrendings().then(
 function drawTrendingGif(data){ 
     trendingContainer.innerHTML = '';
     // call element
-    let gif = data.data.slice(0,3);
+    let gif;
+    if (window.matchMedia("(min-width: 800px)").matches) {
+        /* The screen has at least 960px of width */
+        gif = data.data.slice(0,3);
+        } else {
+        /* The screen has less than 960px of width */
+        // limit = 20;
+        gif = data.data.slice(0,20);
+    }
+    
     gif.forEach(
         (element, index) => {
             // create element 
@@ -37,6 +46,7 @@ function drawTrendingGif(data){
         });
        // NO RESULTS
     (gif.length === 0) ?  (LeftBtn.style.display = "none") && (trendingTitle.textContent = 'Ups, no hay más GIFOS por acá') && (trendingText.style.display ='none'): (noResults.style.display = 'none') && (trendingText.style.display = 'block') && (trendingTitle.textContent = 'Trending GIFOS');      
+    
            
 }
 
@@ -70,6 +80,7 @@ function LeftBtnEvent() {
     
 }
 
-
- 
+/* function changeLimitMobileDesktop(gif, data) {
+  
+}; */
 
