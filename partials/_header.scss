@@ -69,18 +69,18 @@ header {
 //-------------------- HAMBURGUER MENU ------------------------ //
 
     #hamburger_menu {
-        background-image: url('./assests/burger.svg');
+        background-image: url('../assests/burger.svg');
         background-repeat: no-repeat;
         width: 15px;
         height: 15px;
         cursor: pointer;
         body.dark & {
-            background-image: url('./assests/burger-modo-noct.svg');
+            background-image: url('../assests/burger-modo-noct.svg');
         }
         &.hamburguer_active {
-            background-image: url('./assests/close.svg');
+            background-image: url('/assests/close.svg');
             body.dark & {
-                background-image: url('./assests/close-modo-noct.svg');
+                background-image: url('/assests/close-modo-noct.svg');
             }
         }
     }
