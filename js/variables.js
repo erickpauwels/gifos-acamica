@@ -59,3 +59,6 @@ let favorites = JSON.parse(localStorage.getItem('favorites'));
 console.log(favorites);
 let currentIndex=12;
 let noFavorites = document.getElementById('no_results_fav');
+
+//------------------ MIS GIFOS ------------------- //
+let myGifosText =  document.getElementById('mis_gifos_text');

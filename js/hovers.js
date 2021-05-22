@@ -1,4 +1,3 @@
- 
 //---------------------  HOVER ON GIF --------------------------//
 
 function drawHover(gif, index, div) {

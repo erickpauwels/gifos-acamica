@@ -6,7 +6,7 @@ const videoContainer = document.getElementById('crear_container');
 const textBox = document.getElementById('text_box');
 const timer = document.getElementById('timer');
 const repeat = document.getElementById('repeat');
-
+let blob;
 //BUTTONS
 
 const startBTn = document.getElementById('start_btn');
@@ -24,6 +24,9 @@ const number3 = document.getElementById('number3');
 let minutes = document.getElementById('minutes');
 let seconds = document.getElementById('seconds');
 let totalSeconds = 0;
+
+// RESULTS
+const myResults = document.getElementById('mis_gifos_results');
 
 // styles buttons starting 
 
@@ -107,14 +110,29 @@ function pad(val) {
 endBTn.addEventListener('click', () =>{
     number2.classList.remove('step_selected');
     number3.classList.add('step_selected');
-    recorder.stopRecording();
+    recorder.stopRecording( () => {
+        blob = recorder.getBlob();
+        let blobInfo = window.URL.createObjectURL(blob);
+        console.log(blobInfo);
+        drawResultmyGif(blobInfo);
+        localStorage.setItem("migifo", blobInfo);
+    });
     uploadBTn.style.display ='block';
     endBTn.style.display ='none';
     timer.style.display = "none";
-    // Repear caption 
+    // Repeat caption 
     repeat.style.display = "block";
     repeat.addEventListener('click', () => location.reload());
 })
+
+// ----------------------- DRAW RESULTS FOR "MIS GIFOS" -------------------//
+function drawResultmyGif (url) {
+    console.log(url);
+    let myGif = document.createElement('img');
+    myGif.src = url;
+    myResults.appendChild(myGif);
+    myGif.style.display = 'none';
+}
 
 // ----------------------- UPLOAD GIFO --------------------- //
 

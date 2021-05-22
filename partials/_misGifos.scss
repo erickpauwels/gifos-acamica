@@ -1,5 +1,5 @@
 #mis_gifos {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -12,19 +12,34 @@
         color: $main;
         margin-bottom: 46px;
     }
-    #my_gif_container {
+    #mis_gifos_results {
         display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-        width: 100%;
-        .mi_gif{
-            margin-bottom: 25px;
-            width: 156px;
-            height: 120px;
-            background: $secondary;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        p{
+            @extend %font-h1;
+            width: auto;
+            color: $secondary;
+            body.dark & {
+                color: $clear;
+            }
         }
+        .my_gif{
+            display: none;
+            margin-bottom: 20px;
+            width: 250px;
+            height: 200px;
+        }
+        
+    }
+    #btn_ver_mas_gifos{
+        display: none;
+        @extend %button_ver_mas;
     }
     .button_ver_mas{
+        display: block;
         @extend %button_ver_mas;
     }
 }
