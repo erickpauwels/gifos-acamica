@@ -290,7 +290,7 @@ nav.menu_active ul li a {
 }
 
 #hamburger_menu {
-  background-image: url(assests/burger.svg);
+  background-image: url(/assests/burger.svg);
   background-repeat: no-repeat;
   width: 15px;
   height: 15px;
@@ -298,15 +298,15 @@ nav.menu_active ul li a {
 }
 
 body.dark #hamburger_menu {
-  background-image: url(assests/burger-modo-noct.svg);
+  background-image: url(/assests/burger-modo-noct.svg);
 }
 
 #hamburger_menu.hamburguer_active {
-  background-image: url("/assests/close.svg");
+  background-image: url(/assests/close.svg);
 }
 
 body.dark #hamburger_menu.hamburguer_active {
-  background-image: url("/assests/close-modo-noct.svg");
+  background-image: url(/assests/close-modo-noct.svg);
 }
 
 @media screen and (min-width: 800px) {
@@ -1086,7 +1086,10 @@ body.dark #mis_gifos #mis_gifos_results p {
   display: none;
   margin-bottom: 20px;
   width: 250px;
-  height: 200px;
+}
+
+#mis_gifos #mis_gifos_results img {
+  display: none;
 }
 
 #mis_gifos #btn_ver_mas_gifos {
