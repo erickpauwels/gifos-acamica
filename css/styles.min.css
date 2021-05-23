@@ -122,43 +122,43 @@ body.dark #results .button_ver_mas:hover, #results body.dark .button_ver_mas:hov
 }
 
 #results #search_result .img_hover .icons_box .fav_icon, #trending #trending_modal #trending_gifs .img_hover .icons_box .fav_icon {
-  background: url("/assests/icon-fav.svg");
+  background: url(../assests/icon-fav.svg);
   width: 32px;
   height: 32px;
   transition: all 0.3s ease-out;
 }
 
 #results #search_result .img_hover .icons_box .fav_icon:hover, #trending #trending_modal #trending_gifs .img_hover .icons_box .fav_icon:hover {
-  background: url("/assests/icon-fav-hover.svg");
+  background: url(../assests/icon-fav-hover.svg);
 }
 
 #results #search_result .img_hover .icons_box .fav_icon .active, #trending #trending_modal #trending_gifs .img_hover .icons_box .fav_icon .active {
-  background: url("/assests/icon-fav-active.svg") no-repeat;
+  background: url(../assests/icon-fav-active.svg) no-repeat;
   background-position: center;
   background-color: white;
   border-radius: 6px;
 }
 
 #results #search_result .img_hover .icons_box .download_icon, #trending #trending_modal #trending_gifs .img_hover .icons_box .download_icon {
-  background: url("/assests/icon-download.svg");
+  background: url(../assests/icon-download.svg);
   width: 32px;
   height: 32px;
   margin-left: 5px;
 }
 
 #results #search_result .img_hover .icons_box .download_icon:hover, #trending #trending_modal #trending_gifs .img_hover .icons_box .download_icon:hover {
-  background: url("/assests/icon-download-hover.svg");
+  background: url(../assests/icon-download-hover.svg);
 }
 
 #results #search_result .img_hover .icons_box .expand_icon, #trending #trending_modal #trending_gifs .img_hover .icons_box .expand_icon {
-  background: url("/assests/icon-max-normal.svg");
+  background: url(../assests/icon-max-normal.svg);
   width: 32px;
   height: 32px;
   margin-left: 5px;
 }
 
 #results #search_result .img_hover .icons_box .expand_icon:hover, #trending #trending_modal #trending_gifs .img_hover .icons_box .expand_icon:hover {
-  background: url("/assests/icon-max-hover.svg");
+  background: url(../assests/icon-max-hover.svg);
 }
 
 #results #search_result .img_hover .text_box, #trending #trending_modal #trending_gifs .img_hover .text_box {
@@ -382,25 +382,25 @@ body.dark #hamburger_menu.hamburguer_active {
   }
   .cta .plus_button {
     display: flex;
-    background-image: url("/assests/button-crear-gifo.svg");
+    background-image: url(../assests/button-crear-gifo.svg);
     background-repeat: no-repeat;
     width: 54px;
     height: 54px;
   }
   .cta .plus_button:hover {
-    background-image: url("/assests/CTA-crear-gifo-hover.svg");
+    background-image: url(../assests/CTA-crear-gifo-hover.svg);
   }
   .cta .plus_button:active {
-    background-image: url("/assests/CTA-crear-gifo-active.svg");
+    background-image: url(../assests/CTA-crear-gifo-active.svg);
   }
   body.dark .cta .plus_button {
-    background-image: url("/assests/CTA-crear-gifo-modo-noc.svg");
+    background-image: url(../assests/CTA-crear-gifo-modo-noc.svg);
   }
   body.dark .cta .plus_button:hover {
-    background-image: url("/assests/CTA-crear-gifo-hover-modo-noc.svg");
+    background-image: url(../assests/CTA-crear-gifo-hover-modo-noc.svg);
   }
   body.dark .cta .plus_button:active {
-    background-image: url("/assests/CTA-crear-gifo-active-modo-noc.svg");
+    background-image: url(../assests/CTA-crear-gifo-active-modo-noc.svg);
   }
 }
 
@@ -673,11 +673,11 @@ body.dark #modal {
   margin-right: 10%;
   align-self: flex-end;
   cursor: pointer;
-  background-image: url("/assests/close.svg");
+  background-image: url(../assests/close.svg);
 }
 
 body.dark #modal .close_modal {
-  background-image: url("/assests/close-modo-noct.svg");
+  background-image: url(../assests/close-modo-noct.svg);
 }
 
 #modal #modal_container {
@@ -688,14 +688,14 @@ body.dark #modal .close_modal {
 
 #modal #modal_container .left_div {
   display: none;
-  background-image: url("/assests/button-slider-left.svg");
+  background-image: url(../assests/button-slider-left.svg);
   width: 40px;
   height: 40px;
 }
 
 #modal #modal_container .left_div:hover {
   cursor: pointer;
-  background-image: url("/assests/button-slider-left-hover.svg");
+  background-image: url(../assests/button-slider-left-hover.svg);
 }
 
 #modal #modal_container #gif_expanded {
@@ -707,14 +707,14 @@ body.dark #modal .close_modal {
 
 #modal #modal_container .rigth_div {
   display: none;
-  background-image: url("/assests/Button-Slider-right.svg");
+  background-image: url(../assests/Button-Slider-right.svg);
   width: 40px;
   height: 40px;
 }
 
 #modal #modal_container .rigth_div:hover {
   cursor: pointer;
-  background-image: url("/assests/Button-Slider-right-hover.svg");
+  background-image: url(../assests/Button-Slider-right-hover.svg);
 }
 
 #modal #modal_text_buttons {
@@ -747,33 +747,33 @@ body.dark #modal #modal_text_buttons #modal_text p {
 }
 
 #modal #modal_text_buttons #modal_buttons .fav_modal {
-  background: url("/assests/icon-fav.svg");
+  background: url(../assests/icon-fav.svg);
   width: 32px;
   height: 32px;
   transition: all 0.3s ease-out;
 }
 
 #modal #modal_text_buttons #modal_buttons .fav_modal:hover {
-  background: url("/assests/icon-fav-hover.svg");
+  background: url(../assests/icon-fav-hover.svg);
   cursor: pointer;
 }
 
 #modal #modal_text_buttons #modal_buttons .fav_modal .active {
-  background: url("/assests/icon-fav-active.svg") no-repeat;
+  background: url(../assests/icon-fav-active.svg) no-repeat;
   background-position: center;
   background-color: white;
   border-radius: 6px;
 }
 
 #modal #modal_text_buttons #modal_buttons .download_modal {
-  background: url("/assests/icon-download.svg");
+  background: url(../assests/icon-download.svg);
   width: 32px;
   height: 32px;
   margin-left: 5px;
 }
 
 #modal #modal_text_buttons #modal_buttons .download_modal:hover {
-  background: url("/assests/icon-download-hover.svg");
+  background: url(../assests/icon-download-hover.svg);
   cursor: pointer;
 }
 
@@ -840,19 +840,19 @@ body.dark #modal #modal_text_buttons #modal_text p {
   }
   #modal #modal_container .left_div {
     display: block;
-    background-image: url("/assests/button-slider-left.svg");
+    background-image: url(../assests/button-slider-left.svg);
     width: 40px;
     height: 40px;
   }
   #modal #modal_container .left_div:hover {
     cursor: pointer;
-    background-image: url("/assests/button-slider-left-hover.svg");
+    background-image: url(../assests/button-slider-left-hover.svg);
   }
   body.dark #modal #modal_container .left_div {
-    background-image: url("/assests/button-slider-left-md-noct.svg");
+    background-image: url(../assests/button-slider-left-md-noct.svg);
   }
   body.dark #modal #modal_container .left_div:hover {
-    background-image: url("/assests/button-slider-left-hover-modo-noct-01.svg");
+    background-image: url(../assests/button-slider-left-hover-modo-noct-01.svg);
   }
   #modal #modal_container #gif_expanded {
     margin: 25px;
@@ -862,19 +862,19 @@ body.dark #modal #modal_text_buttons #modal_text p {
   }
   #modal #modal_container .rigth_div {
     display: block;
-    background-image: url("/assests/Button-Slider-right.svg");
+    background-image: url(../assests/Button-Slider-right.svg);
     width: 40px;
     height: 40px;
   }
   #modal #modal_container .rigth_div:hover {
     cursor: pointer;
-    background-image: url("/assests/Button-Slider-right-hover.svg");
+    background-image: url(../assests/Button-Slider-right-hover.svg);
   }
   body.dark #modal #modal_container .rigth_div {
-    background-image: url("/assests/button-slider-right-md-noct.svg");
+    background-image: url(../assests/button-slider-right-md-noct.svg);
   }
   body.dark #modal #modal_container .rigth_div:hover {
-    background-image: url("/assests/Button-Slider-right-hover-modo-noct-01.svg");
+    background-image: url(../assests/Button-Slider-right-hover-modo-noct-01.svg);
   }
   #modal #modal_text_buttons {
     display: flex;
@@ -963,43 +963,43 @@ body.dark #favoritos #favorite_header h1 {
 }
 
 #favoritos #favorites_results .img_hover .icons_box .fav_icon {
-  background: url("/assests/icon-fav.svg");
+  background: url(../assests/icon-fav.svg);
   width: 32px;
   height: 32px;
   transition: all 0.3s ease-out;
 }
 
 #favoritos #favorites_results .img_hover .icons_box .fav_icon:hover {
-  background: url("/assests/icon-fav-hover.svg");
+  background: url(../assests/icon-fav-hover.svg);
 }
 
 #favoritos #favorites_results .img_hover .icons_box .fav_icon .active {
-  background: url("/assests/icon-fav-active.svg") no-repeat;
+  background: url(../assests/icon-fav-active.svg) no-repeat;
   background-position: center;
   background-color: white;
   border-radius: 6px;
 }
 
 #favoritos #favorites_results .img_hover .icons_box .download_icon {
-  background: url("/assests/icon-download.svg");
+  background: url(../assests/icon-download.svg);
   width: 32px;
   height: 32px;
   margin-left: 5px;
 }
 
 #favoritos #favorites_results .img_hover .icons_box .download_icon:hover {
-  background: url("/assests/icon-download-hover.svg");
+  background: url(../assests/icon-download-hover.svg);
 }
 
 #favoritos #favorites_results .img_hover .icons_box .expand_icon {
-  background: url("/assests/icon-max-normal.svg");
+  background: url(../assests/icon-max-normal.svg);
   width: 32px;
   height: 32px;
   margin-left: 5px;
 }
 
 #favoritos #favorites_results .img_hover .icons_box .expand_icon:hover {
-  background: url("/assests/icon-max-hover.svg");
+  background: url(../assests/icon-max-hover.svg);
 }
 
 #favoritos #favorites_results .img_hover .text_box {

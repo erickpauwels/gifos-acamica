@@ -83,9 +83,9 @@
             margin-right: 10%;
             align-self: flex-end;   
             cursor: pointer;
-            background-image: url('/assests/close.svg');
+            background-image: url(../assests/close.svg);
             body.dark & {
-                background-image: url('/assests/close-modo-noct.svg');
+                background-image: url(../assests/close-modo-noct.svg);
               }
 
         }
@@ -95,12 +95,12 @@
             align-items: center;
             .left_div {
                 display: none;
-                background-image: url('/assests/button-slider-left.svg');
+                background-image: url(../assests/button-slider-left.svg);
                 width:40px;
                 height: 40px;
                 &:hover {
                     cursor: pointer;
-                    background-image: url('/assests/button-slider-left-hover.svg');
+                    background-image: url(../assests/button-slider-left-hover.svg);
                 }
             }
             #gif_expanded{
@@ -111,12 +111,12 @@
             }
             .rigth_div {
                 display: none;
-                background-image: url('/assests/Button-Slider-right.svg');
+                background-image: url(../assests/Button-Slider-right.svg);
                 width:40px;
                 height: 40px;
                 &:hover {
                     cursor: pointer;
-                    background-image: url('/assests/Button-Slider-right-hover.svg');
+                    background-image: url(../assests/Button-Slider-right-hover.svg);
                 }
             }
         }
@@ -146,28 +146,28 @@
                     
 
             .fav_modal{
-                background: url('/assests/icon-fav.svg');
+                background: url(../assests/icon-fav.svg);
                 width: 32px;
                 height: 32px;
                 transition: all 0.3s ease-out;
                 &:hover{
-                    background: url('/assests/icon-fav-hover.svg');
+                    background: url(../assests/icon-fav-hover.svg);
                     cursor: pointer;
                 }
                 .active{
-                    background: url('/assests/icon-fav-active.svg') no-repeat;
+                    background: url(../assests/icon-fav-active.svg) no-repeat;
                     background-position: center;
                     background-color: $clear;
                     border-radius: 6px;
                     }
                 }
             .download_modal {
-                    background: url('/assests/icon-download.svg');
+                    background: url(../assests/icon-download.svg);
                     width: 32px;
                     height: 32px;
                     margin-left: 5px;
                     &:hover{
-                        background: url('/assests/icon-download-hover.svg');
+                        background: url(../assests/icon-download-hover.svg);
                         cursor: pointer;
                     }
                 }
@@ -247,17 +247,17 @@
         display: flex;         
             .left_div {
                 display: block;
-                background-image: url('/assests/button-slider-left.svg');
+                background-image: url(../assests/button-slider-left.svg);
                 width:40px;
                 height: 40px;
                 &:hover {
                     cursor: pointer;
-                    background-image: url('/assests/button-slider-left-hover.svg');
+                    background-image: url(../assests/button-slider-left-hover.svg);
                 }
                 body.dark & {
-                    background-image: url('/assests/button-slider-left-md-noct.svg');
+                    background-image: url(../assests/button-slider-left-md-noct.svg);
                     &:hover {
-                        background-image: url('/assests/button-slider-left-hover-modo-noct-01.svg');
+                        background-image: url(../assests/button-slider-left-hover-modo-noct-01.svg);
                     }
                 }
             }
@@ -269,17 +269,17 @@
             }
             .rigth_div {
                 display: block;
-                background-image: url('/assests/Button-Slider-right.svg');
+                background-image: url(../assests/Button-Slider-right.svg);
                 width:40px;
                 height: 40px;
                 &:hover {
                     cursor: pointer;
-                    background-image: url('/assests/Button-Slider-right-hover.svg');
+                    background-image: url(../assests/Button-Slider-right-hover.svg);
                 }
                 body.dark & {
-                    background-image: url('/assests/button-slider-right-md-noct.svg');
+                    background-image: url(../assests/button-slider-right-md-noct.svg);
                     &:hover {
-                        background-image: url('/assests/Button-Slider-right-hover-modo-noct-01.svg');
+                        background-image: url(../assests/Button-Slider-right-hover-modo-noct-01.svg);
                     }
                 }
             }

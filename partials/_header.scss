@@ -165,23 +165,23 @@ header {
     display: flex;
     .plus_button {
         display: flex;
-        background-image: url('/assests/button-crear-gifo.svg');
+        background-image: url(../assests/button-crear-gifo.svg);
         background-repeat: no-repeat;
         width: 54px;
         height: 54px;
         &:hover {
-            background-image: url('/assests/CTA-crear-gifo-hover.svg');
+            background-image: url(../assests/CTA-crear-gifo-hover.svg);
         }
         &:active {
-            background-image: url('/assests/CTA-crear-gifo-active.svg');
+            background-image: url(../assests/CTA-crear-gifo-active.svg);
         }
         body.dark &{
-            background-image: url('/assests/CTA-crear-gifo-modo-noc.svg');
+            background-image: url(../assests/CTA-crear-gifo-modo-noc.svg);
            &:hover {
-               background-image: url('/assests/CTA-crear-gifo-hover-modo-noc.svg');
+               background-image: url(../assests/CTA-crear-gifo-hover-modo-noc.svg);
            } 
            &:active {
-               background-image: url('/assests/CTA-crear-gifo-active-modo-noc.svg');
+               background-image: url(../assests/CTA-crear-gifo-active-modo-noc.svg);
            }
         }
     }
