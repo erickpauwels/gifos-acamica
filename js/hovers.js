@@ -33,9 +33,9 @@ function drawHover(gif, index, div) {
             // Favicon event
             favIcon.addEventListener('click', () =>{
                 addFavorite(elements);
-                favIcon.style.backgroundImage = favoritesChecked(elements) ? "url(../assests/icon-trash-hover.svg)": '';
+                favIcon.style.backgroundImage = favoritesChecked(elements) ? "url(./assests/icon-trash-hover.svg)": '';
             })
-            favIcon.style.backgroundImage = favoritesChecked(elements) ? "url(../assests/icon-trash-hover.svg)": '';
+            favIcon.style.backgroundImage = favoritesChecked(elements) ? "url(./assests/icon-trash-hover.svg)": '';
             
             //-------------------Expand Event------------------//
 

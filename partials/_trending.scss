@@ -34,17 +34,17 @@
         .rigthbtn {
             display: none;
             align-self: center;
-            background-image: url(/assests/Button-Slider-right.svg);
+            background-image: url(../assests/Button-Slider-right.svg);
             width:40px;
             height:40px;
                 &:hover {
                     cursor: pointer;
-                    background-image: url(/assests/Button-Slider-right-hover.svg);
+                    background-image: url(../assests/Button-Slider-right-hover.svg);
                     }
                     body.dark & {
-                        background-image: url(/assests/button-slider-right-md-noct.svg);
+                        background-image: url(../assests/button-slider-right-md-noct.svg);
                         &:hover {
-                            background-image: url(/assests/Button-Slider-right-hover-modo-noct-01.svg);
+                            background-image: url(../assests/Button-Slider-right-hover-modo-noct-01.svg);
                         }
                     }
             }
@@ -78,17 +78,17 @@
             .leftbtn { 
                 display: none;
                 align-self: center;
-                background-image: url(/assests/button-slider-left.svg);
+                background-image: url(../assests/button-slider-left.svg);
                     width:40px;
                     height: 40px;
                     &:hover {
                         cursor: pointer;
-                        background-image: url(/assests/button-slider-left-hover.svg);
+                        background-image: url(../assests/button-slider-left-hover.svg);
                     }
                     body.dark & {
-                        background-image: url(/assests/button-slider-left-md-noct.svg);
+                        background-image: url(../assests/button-slider-left-md-noct.svg);
                         &:hover {
-                            background-image: url(/assests/button-slider-left-hover-modo-noct-01.svg);
+                            background-image: url(../assests/button-slider-left-hover-modo-noct-01.svg);
                         }
                     }
                 }

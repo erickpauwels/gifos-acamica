@@ -1141,22 +1141,22 @@ body.dark #trending {
 #trending #trending_modal .rigthbtn {
   display: none;
   align-self: center;
-  background-image: url(/assests/Button-Slider-right.svg);
+  background-image: url(../assests/Button-Slider-right.svg);
   width: 40px;
   height: 40px;
 }
 
 #trending #trending_modal .rigthbtn:hover {
   cursor: pointer;
-  background-image: url(/assests/Button-Slider-right-hover.svg);
+  background-image: url(../assests/Button-Slider-right-hover.svg);
 }
 
 body.dark #trending #trending_modal .rigthbtn {
-  background-image: url(/assests/button-slider-right-md-noct.svg);
+  background-image: url(../assests/button-slider-right-md-noct.svg);
 }
 
 body.dark #trending #trending_modal .rigthbtn:hover {
-  background-image: url(/assests/Button-Slider-right-hover-modo-noct-01.svg);
+  background-image: url(../assests/Button-Slider-right-hover-modo-noct-01.svg);
 }
 
 @media screen and (min-width: 800px) {
@@ -1183,19 +1183,19 @@ body.dark #trending #trending_modal .rigthbtn:hover {
   #trending #trending_modal .leftbtn {
     display: none;
     align-self: center;
-    background-image: url(/assests/button-slider-left.svg);
+    background-image: url(../assests/button-slider-left.svg);
     width: 40px;
     height: 40px;
   }
   #trending #trending_modal .leftbtn:hover {
     cursor: pointer;
-    background-image: url(/assests/button-slider-left-hover.svg);
+    background-image: url(../assests/button-slider-left-hover.svg);
   }
   body.dark #trending #trending_modal .leftbtn {
-    background-image: url(/assests/button-slider-left-md-noct.svg);
+    background-image: url(../assests/button-slider-left-md-noct.svg);
   }
   body.dark #trending #trending_modal .leftbtn:hover {
-    background-image: url(/assests/button-slider-left-hover-modo-noct-01.svg);
+    background-image: url(../assests/button-slider-left-hover-modo-noct-01.svg);
   }
   #trending #trending_modal .rigthbtn {
     display: flex;
