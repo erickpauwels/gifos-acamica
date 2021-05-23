@@ -478,12 +478,12 @@ body.dark #search .search_gifos #input_box input {
   border: none;
   background: none;
   outline: none;
-  background-image: url("/assests/icon-search.svg");
+  background-image: url(../assests/icon-search.svg);
   background-repeat: no-repeat;
 }
 
 body.dark #search .search_gifos #input_box #search_button {
-  background-image: url("/assests/icon-search-mod-noc.svg");
+  background-image: url(../assests/icon-search-mod-noc.svg);
 }
 
 #search .trending_text {

@@ -65,10 +65,10 @@
                     border: none;
                     background: none;
                     outline: none;
-                    background-image: url('/assests/icon-search.svg');
+                    background-image: url(../assests/icon-search.svg);
                     background-repeat: no-repeat;
                     body.dark & {
-                        background-image: url('/assests/icon-search-mod-noc.svg');
+                        background-image: url(../assests/icon-search-mod-noc.svg);
                     }
                 }
      } }
