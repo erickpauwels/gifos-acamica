@@ -1288,12 +1288,19 @@ body.dark #crear #principal_container .crear_container p {
 }
 
 #crear #secondary_container #steps_container .download_a {
-  font-size: 18px;
+  font-size: 14px;
   margin: 15px;
+  font-weight: 600;
 }
 
 #crear #secondary_container #steps_container .download_a:hover {
   cursor: pointer;
+  text-decoration: underline #50E3C2 2px;
+}
+
+body.dark #crear #secondary_container #steps_container .download_a {
+  color: white;
+  font-weight: 600;
 }
 
 #crear #secondary_container #steps_container #numbers {

@@ -23,7 +23,7 @@ drawResultmyGif();
 
 // -----------download function -------------------------- //
 
-iconGifos.addEventListener('click', () => {
+/* iconGifos.addEventListener('click', () => {
     const url = localStorage.getItem("migifo");
     console.log(url);
     let link = document.createElement("a");
@@ -32,15 +32,4 @@ iconGifos.addEventListener('click', () => {
     link.href = url;
     myResults.appendChild(link);
 })
-
-/* function downloadGif() {
-        const url = localStorage.getItem("migifo");
-        console.log(url);
-        let link = document.createElement("a");
-        link.textContent = "descargar";
-        link.setAttribute("download", 'mygif.gif');
-        link.href = url;
-        myResults.appendChild(link);
-        // link.click();
-        // link.remove();
-    }; */
+ */

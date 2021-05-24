@@ -73,10 +73,16 @@
             align-items: center;
             .download_a {
                 @extend %paragraph;
-                font-size: 18px;
+                font-size: 14px;
                 margin: 15px;
+                font-weight: 600;
                 &:hover {
                     cursor: pointer;
+                    text-decoration: underline $secondary 2px;
+                }
+                body.dark & {
+                    color: $clear;
+                    font-weight: 600;
                 }
             }
             #numbers {

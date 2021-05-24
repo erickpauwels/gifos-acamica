@@ -7,6 +7,7 @@ const textBox = document.getElementById('text_box');
 const timer = document.getElementById('timer');
 const repeat = document.getElementById('repeat');
 let blob;
+const stepsContainerGifos =  document.getElementById('steps_container');
 //BUTTONS
 
 const startBTn = document.getElementById('start_btn');
