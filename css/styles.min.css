@@ -31,7 +31,7 @@ Con esto pueden deslizar los gifs haciendo scroll con el touch  */
   font-weight: 400;
 }
 
-#search .trending_text .spam, #crear #secondary_container #steps_container #timer p, #crear #secondary_container #steps_container .repeat {
+#search .trending_text .spam, #crear #secondary_container #steps_container .download_a, #crear #secondary_container #steps_container #timer p, #crear #secondary_container #steps_container .repeat {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -1092,6 +1092,10 @@ body.dark #mis_gifos #mis_gifos_results p {
   display: none;
 }
 
+#mis_gifos #mis_gifos_results img:hover {
+  cursor: pointer;
+}
+
 #mis_gifos #btn_ver_mas_gifos {
   display: none;
 }
@@ -1281,6 +1285,15 @@ body.dark #crear #principal_container .crear_container p {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+#crear #secondary_container #steps_container .download_a {
+  font-size: 18px;
+  margin: 15px;
+}
+
+#crear #secondary_container #steps_container .download_a:hover {
+  cursor: pointer;
 }
 
 #crear #secondary_container #steps_container #numbers {

@@ -63,3 +63,4 @@ let noFavorites = document.getElementById('no_results_fav');
 //------------------ MIS GIFOS ------------------- //
 let myGifosText =  document.getElementById('mis_gifos_text');
 let iconGifos =  document.getElementById('download_incon_gifos');
+const stepsContainerGifos =  document.getElementById('steps_container');

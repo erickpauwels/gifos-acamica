@@ -71,6 +71,14 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
+            .download_a {
+                @extend %paragraph;
+                font-size: 18px;
+                margin: 15px;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
             #numbers {
                 margin:26px;
                 width:100%;

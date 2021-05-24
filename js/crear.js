@@ -112,10 +112,10 @@ endBTn.addEventListener('click', () =>{
     number3.classList.add('step_selected');
     recorder.stopRecording( () => {
         blob = recorder.getBlob();
-        let blobInfo = window.URL.createObjectURL(blob);
-        console.log(blobInfo);
+        let blobInfo = URL.createObjectURL(blob);
+        // console.log(blobInfo);
         drawResultmyGif(blobInfo);
-        localStorage.setItem("migifo", blobInfo);
+        localStorage.setItem("migifo", blobInfo)
     });
     uploadBTn.style.display ='block';
     endBTn.style.display ='none';
@@ -123,16 +123,29 @@ endBTn.addEventListener('click', () =>{
     // Repeat caption 
     repeat.style.display = "block";
     repeat.addEventListener('click', () => location.reload());
+
+    videoContainer.appendChild(myResults);
+    video.style.display = "none";
+
+   
+
 })
 
 // ----------------------- DRAW RESULTS FOR "MIS GIFOS" -------------------//
 function drawResultmyGif (url) {
     console.log(url);
     let myGif = document.createElement('img');
+    let link = document.createElement("a");
+    
     myGif.src = url;
-    myResults.appendChild(myGif);
-    myGif.style.display = 'none';
+      link.textContent = "DESCARGAR";
+      link.setAttribute("download", 'mygif.gif');
+      link.href = url; 
+      link.classList.add('download_a');
+      myResults.appendChild(myGif);
+      stepsContainerGifos.appendChild(link);
+    //   myGif.style.display = 'none';
 }
 
-// ----------------------- UPLOAD GIFO --------------------- //
+
 
