@@ -10,13 +10,10 @@ async function getSuggestions(limit) {
 //------------ Draw Suggestions -----------//
 
 function drawSuggestions() {
-    // searchInput.innerHTML = '';
     suggestionList.innerHTML = '';
-    // create elements 
-    let hr = document.createElement('hr');
-    hr.classList.add('hr_suggestions');   
-    suggestionList.appendChild(hr); 
-    
+    suggestionList.style.display = 'block';
+    searchButton.style.display = "none";
+    closeButton.style.display = "block";
     getSuggestions().then(data => {
         let suggestions = data.data;
         suggestions.forEach(element => {
@@ -35,19 +32,40 @@ function drawSuggestions() {
                  console.log(element.name);
                  searchInput.value = '';
                  suggestionList.innerHTML = '';
+                 closeButton.style.display = 'none';
+                 searchButton.style.display = 'block';
                  localStorage.setItem("inputValue", JSON.stringify(element.name));
                  showresults()
                  searchText.innerHTML = (element.name);
                  searchText.classList.add('search_text');
              });
         });
-})}
+})
+    // create hr 
+/* let hr = document.createElement('hr');
+    hr.classList.add('hr_suggestions');  
+    // create elements 
+    suggestionList.appendChild(hr);  */
+
+    //close button event
+closeButton.addEventListener('click', () => {
+    searchInput.innerHTML = '';
+    suggestionList.style.display = 'none';
+    hr.style.display = 'none';
+    closeButton.style.display = 'none';
+    searchButton.style.display = 'block';
+    searchInput.value = '';
+})
+
+}
 
 //------------SHOW SUGGESTION LIST ---------------------------------//
 
 searchInput.addEventListener('keyup', () => {
     drawSuggestions();
   });
+
+
 
 
 //------------------- SHOW RESULTS ---------------//

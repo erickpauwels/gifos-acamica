@@ -22,6 +22,7 @@ let suggestionList = document.getElementById('suggestions_input');
 let searchGifos = document.getElementById('search_gifos');
 let searchText = document.getElementById('search_text');
 let trendingP = document.getElementById('trending_p');
+let closeButton = document.getElementById('close_button');
 
 // ----------VARIABLES RESULTS -----------//
 let btnSeeMore = document.getElementById('btn_see_more');
@@ -56,7 +57,6 @@ let btnFavoritesSeeMore = document.getElementById('btn_see_more_favorites');
 let favoritesResultsContainer = document.getElementById('favorites_results');
 let favoritesHeader = document.getElementById('favorite_header');
 let favorites = JSON.parse(localStorage.getItem('favorites'));
-console.log(favorites);
 let currentIndex=12;
 let noFavorites = document.getElementById('no_results_fav');
 

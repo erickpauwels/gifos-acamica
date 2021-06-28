@@ -435,7 +435,6 @@ body.dark #search h1 {
   flex-direction: column;
   max-width: 551px;
   height: auto;
-  margin-top: 10p;
   border: 1px solid #572EE5;
   border-radius: 27px;
   padding-top: 15px;
@@ -486,6 +485,23 @@ body.dark #search .search_gifos #input_box #search_button {
   background-image: url(../assests/icon-search-mod-noc.svg);
 }
 
+#search .search_gifos #input_box .close_button {
+  display: none;
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+  background-image: url(../assests/close.svg);
+  background-repeat: no-repeat;
+}
+
+body.dark #search .search_gifos #input_box .close_button {
+  background-image: url(../assests/close-modo-noct.svg);
+}
+
 #search .trending_text {
   width: 50%;
   text-align: center;
@@ -514,15 +530,17 @@ body.dark #search .trending_text .spam {
 }
 
 #suggestions_input {
+  display: none;
   width: 89.1%;
   margin: 0 auto;
-}
-
-#suggestions_input .hr_suggestions {
-  width: 95%;
-  margin: 8px auto 5px;
-  opacity: 0.5;
-  color: #9CAFC3;
+  margin-top: 10px;
+  border-top: 1px solid #9CAFC3;
+  /* .hr_suggestions {
+        width: 95%;
+        margin: 8px auto 5px;
+        opacity: 0.5;
+        color: #9CAFC3;
+    } */
 }
 
 #suggestions_input .li_suggestions {
@@ -548,7 +566,7 @@ body.dark #suggestions_input .li_suggestions {
 }
 
 #suggestions_input .li_suggestions .spam_lupa {
-  background-image: url("/assests/icon-search-grey.svg");
+  background-image: url(../assests/icon-search-grey.svg);
   width: 15.8px;
   height: 15.8px;
   background-repeat: no-repeat;

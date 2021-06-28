@@ -8,6 +8,9 @@ async function getGif (text , offset ) {
 
 // ------------------- CLICK EVENT ON SEARCH INPUT -------------------------//
 
+
+
+
 searchButton.addEventListener('click', (event) => {
     // Click EVENT 
     event.preventDefault();
@@ -27,7 +30,9 @@ searchButton.addEventListener('click', (event) => {
     document.getElementById('search_result').innerHTML = '';
     // delete input text
     searchInput.value = '';
+
 })
+
 
 // ---------------- DRAW GIF RESULTS --------------------//
 
@@ -55,7 +60,7 @@ function drawGif(data){
             hr.style.display = 'block';
         });
      // NO RESULTS
-    (gif.length === 0) ? (noResults.style.display = 'flex')  && (btnSeeMore.style.display= 'none') : (noResults.style.display = 'none');
+    (gif.length === 0) ? (noResults.style.display = 'flex')  && (btnSeeMore.style.display= 'none')  :  (closeButton.style.display = 'none') && (suggestionList.style.border = 'none') && (searchButton.style.display = 'block') && (noResults.style.display = 'none');
 }
 
 

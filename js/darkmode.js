@@ -18,7 +18,7 @@ function darkModeText() {
     darkMode.innerHTML === "Modo Nocturno" ? darkmode.innerHTML = "Modo Diurno" : darkMode.innerHTML = "Modo Nocturno";
 }
 
-//------------------------ SET MODE LOCAL STORAGE -------------------------// enable con '' linea de texto ------//
+//------------------------ GET MODE LOCAL STORAGE -------------------------// enable con '' linea de texto ------//
 
 if (localStorage.getItem('dark-mode') === 'enable') {
   document.body.classList.add('dark');
