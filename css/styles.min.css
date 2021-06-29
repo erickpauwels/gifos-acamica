@@ -550,7 +550,7 @@ body.dark #search .trending_text .spam {
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
-  font-size: rem(16px);
+  font-size: 16px;
   color: #9CAFC3;
   text-align: left;
   transition: all 0.3s ease-out;
@@ -1394,7 +1394,7 @@ body.dark #crear #principal_container .crear_container p {
 
 #crear #secondary_container #steps_container .download_a:hover {
   cursor: pointer;
-  text-decoration: underline #50E3C2 2px;
+  text-decoration: underline #50E3C2;
 }
 
 body.dark #crear #secondary_container #steps_container .download_a {
@@ -1451,7 +1451,7 @@ body.dark #crear #secondary_container #steps_container #timer p {
 
 #crear #secondary_container #steps_container .repeat:hover {
   cursor: pointer;
-  text-decoration: underline #50E3C2 2px;
+  text-decoration: underline #50E3C2;
 }
 
 body.dark #crear #secondary_container #steps_container .repeat {

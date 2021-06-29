@@ -161,7 +161,7 @@
                 font-weight: 600;
                 &:hover {
                     cursor: pointer;
-                    text-decoration: underline $secondary 2px;
+                    text-decoration: underline $secondary;
                 }
                 body.dark & {
                     color: $clear;
@@ -213,7 +213,7 @@
                 font-weight: 600;
                 &:hover{
                     cursor: pointer;
-                    text-decoration: underline $secondary 2px;
+                    text-decoration: underline $secondary;
 
                 }
                 body.dark & {

@@ -129,7 +129,7 @@
         flex-direction: row-reverse;
         justify-content: flex-end;
         @extend %font-text-black;
-        font-size: rem(16px);
+        font-size: 16px;
         color: $active;
         text-align: left; 
         transition: all 0.3s ease-out;
