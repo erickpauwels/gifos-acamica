@@ -6,7 +6,7 @@ Propiedades con CSS para mobile, estas van aplicadas al contenedor Trending Gifo
 overflow-x: scroll;
 scroll-snap-type: x mandatory;
 Con esto pueden deslizar los gifs haciendo scroll con el touch  */
-#results .button_ver_mas, #btn_see_more_favorites, #mis_gifos #btn_ver_mas_gifos, #mis_gifos .button_ver_mas, #crear #secondary_container .start_btn, #search h1, #search .trending_text h3, #results .search_text, #results .no_results p, #favoritos #favorite_header h1, #no_results_fav p, #mis_gifos h1, #mis_gifos #mis_gifos_results p, #trending h2, #crear #principal_container .crear_container h1, #crear #secondary_container #steps_container #numbers .steps {
+#results .button_ver_mas, #btn_see_more_favorites, #mis_gifos #btn_ver_mas_gifos, #mis_gifos .button_ver_mas, #crear #secondary_container .start_btn, #search h1, #search .trending_text h3, #results .search_text, #results .no_results p, #favoritos #favorite_header h1, #no_results_fav p, #mis_gifos h1, #mis_gifos #mis_gifos_results p, #trending h2, #crear #principal_container .crear_container .video-hover .video-hover-text, #crear #principal_container .crear_container h1, #crear #secondary_container #steps_container #numbers .steps {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 20px;
@@ -251,7 +251,7 @@ nav.menu_active {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 3;
 }
 
 body.dark nav.menu_active {
@@ -348,6 +348,9 @@ body.dark #hamburger_menu.hamburguer_active {
     font-size: 14px;
   }
   header nav ul #burger_menu_border {
+    display: none;
+  }
+  header nav ul .create_section {
     display: none;
   }
   header nav ul li {
@@ -530,17 +533,15 @@ body.dark #search .trending_text .spam {
 }
 
 #suggestions_input {
-  display: none;
   width: 89.1%;
   margin: 0 auto;
-  margin-top: 10px;
-  border-top: 1px solid #9CAFC3;
-  /* .hr_suggestions {
-        width: 95%;
-        margin: 8px auto 5px;
-        opacity: 0.5;
-        color: #9CAFC3;
-    } */
+}
+
+#suggestions_input .hr_suggestions {
+  width: 95%;
+  margin: 8px auto 5px;
+  opacity: 0.5;
+  color: #9CAFC3;
 }
 
 #suggestions_input .li_suggestions {
@@ -1073,7 +1074,7 @@ body.dark #favoritos #favorite_header h1 {
   align-items: center;
 }
 
-#mis_gifos img {
+#mis_gifos #icon_mis_gifos {
   margin-top: 5px;
   margin-bottom: 7px;
 }
@@ -1085,7 +1086,7 @@ body.dark #favoritos #favorite_header h1 {
 
 #mis_gifos #mis_gifos_results {
   display: flex;
-  flex-flow: column;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   width: 80%;
@@ -1101,17 +1102,16 @@ body.dark #mis_gifos #mis_gifos_results p {
 }
 
 #mis_gifos #mis_gifos_results .my_gif {
-  display: none;
+  display: flex;
   margin-bottom: 20px;
+  align-items: center;
   width: 250px;
 }
 
 #mis_gifos #mis_gifos_results img {
-  display: none;
-}
-
-#mis_gifos #mis_gifos_results img:hover {
-  cursor: pointer;
+  display: flex;
+  width: 80%;
+  margin: 10px;
 }
 
 #mis_gifos #btn_ver_mas_gifos {
@@ -1261,6 +1261,87 @@ body.dark #trending #trending_modal .rigthbtn:hover {
 
 body.dark #crear #principal_container .crear_container {
   border-color: #50E3C2;
+}
+
+#crear #principal_container .crear_container .video-hover {
+  width: 400px;
+  height: 300px;
+  opacity: 0.6;
+  background: #572EE5;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#crear #principal_container .crear_container .video-hover .loader-hover {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto 10px;
+  animation: rotation 5s infinite linear;
+  background-image: url(../assests/loader.svg);
+}
+
+#crear #principal_container .crear_container .video-hover .succes-hover {
+  display: block;
+  width: 18px;
+  height: 13px;
+  margin: 0 auto 10px;
+  background-image: url(../assests/check.svg);
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+#crear #principal_container .crear_container .video-hover .video-hover-text {
+  color: white;
+  text-align: center;
+}
+
+#crear #principal_container .crear_container .video-hover .video-hover-btns-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 25px;
+}
+
+#crear #principal_container .crear_container .video-hover .video-hover-btns-container .video-hover-save-btn {
+  background-image: url(../assests/icon-download.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 32px;
+  width: 32px;
+  border: 1px solid rgba(156, 175, 195, 0.5);
+  border-radius: 6px;
+  margin-left: 10px;
+}
+
+#crear #principal_container .crear_container .video-hover .video-hover-btns-container .video-hover-save-btn:hover {
+  cursor: pointer;
+  background-image: url(../assests/icon-download-hover.svg);
+}
+
+#crear #principal_container .crear_container .video-hover .video-hover-btns-container .video-hover-link-btn {
+  background-image: url(../assests/icon-link-normal.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 32px;
+  width: 32px;
+  border: 1px solid rgba(156, 175, 195, 0.5);
+  border-radius: 6px;
+  margin-left: 10px;
+}
+
+#crear #principal_container .crear_container .video-hover .video-hover-btns-container .video-hover-link-btn:hover {
+  cursor: pointer;
+  background-image: url(../assests/icon-link-hover.svg);
 }
 
 #crear #principal_container .crear_container .video_box {
@@ -1424,10 +1505,18 @@ body.dark #crear #secondary_container .block {
     width: 550px;
     height: 400px;
     margin-left: -70px;
+    /*  .video-hover {
+                width: 100%;
+                height: 300px;
+            } */
   }
   #crear #principal_container .crear_container .video_box {
     width: 500px;
     height: 400px;
+  }
+  .crear_container .video-hover {
+    width: 100%;
+    height: 100%;
   }
   #crear #secondary_container #steps_container {
     display: flex;

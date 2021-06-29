@@ -38,6 +38,8 @@ uploadBTn.style.display ='none';
 timer.style.display = "none";
 repeat.style.display = "none";
 
+//Upload End point 
+let uploadUrl = `https://upload.giphy.com/v1/gifs?api_key=${apiKey}`;
 
 // ------------------ START VIDEO  ---------------------//
 
@@ -111,12 +113,12 @@ function pad(val) {
 endBTn.addEventListener('click', () =>{
     number2.classList.remove('step_selected');
     number3.classList.add('step_selected');
+    videoContainer.style.border = 'none';
     recorder.stopRecording( () => {
         blob = recorder.getBlob();
         let blobInfo = URL.createObjectURL(blob);
         // console.log(blobInfo);
         drawResultmyGif(blobInfo);
-        localStorage.setItem("migifo", blobInfo)
     });
     uploadBTn.style.display ='block';
     endBTn.style.display ='none';
@@ -132,20 +134,124 @@ endBTn.addEventListener('click', () =>{
 
 })
 
-// ----------------------- DRAW RESULTS FOR "MIS GIFOS" -------------------//
-function drawResultmyGif (url) {
-    console.log(url);
-    let myGif = document.createElement('img');
-    let link = document.createElement("a");
+//----------------------- UPLOAD ----------------------------------------//
+
+async function uploadGif() {  
+    let form = new FormData();
+    form.append('file', blob, 'myGif.gif');
+    console.log(form.get('file'));
+
+    let resp = await fetch(uploadUrl, { method: "POST", body: form });
+    let data = await resp.json();
+
+    return data;
+}
+
+// Fetch endopint and bring created gifs
+async function getGifos(id) {
+    let response = await fetch(`https://api.giphy.com/v1/gifs/${id}?api_key=${apiKey}`);
+    let content = await response.json();
+    return content;
+}
+
+//-------------------UPLOAD CLICK EVENT -------------------// 
+
+uploadBTn.addEventListener('click', () =>{
+    uploadBTn.style.display = 'none';
+    // repeat.style.display = "none";
+    videoHover()
+    // Upload gif, save it to local storage and show success hover
+    uploadGif().then(data => {
+        let gifId = data.data.id;
+        
+        getGifos(gifId).then(content => {
+            console.log(content);
+            
+            // Define url for download button and uploaded gif hover
+            let url = content.data.images.original.url;
+            successHover(url);
+
+            // Save created gifs to local storage
+            let obj = content.data;
+            let gifosList = JSON.parse(localStorage.getItem('gifosList'));
+            let gifosIndex;
+
+            if (!gifosList) {
+                gifosList = [];
+                gifosIndex = -1;
+            } else {
+                gifosIndex = gifosList.findIndex(gifosList => gifosList.id == obj.id);
+            }
+
+            if (gifosIndex == -1) {
+                gifosList.push(obj);
+            } else {
+                gifosList.splice(gifosIndex, 1);
+                location.reload();
+            }
+
+            localStorage.setItem('gifosList', JSON.stringify(gifosList));
+        });
+
+        
+    });
+})
+
+// ----------successHover when uploading---------//
+
+function successHover(url) {
+    videoContainer.innerHTML = "";
+    let div = document.createElement('div');
+    let img = document.createElement('div');
+    let text = document.createElement('p');
+    let btnsContainer = document.createElement('div');
+    let saveBtn = document.createElement('div');
+    let linkBtn = document.createElement('div');
+
+    text.innerText = "GIFO subido con éxito";
     
+    div.classList.add('video-hover');
+    img.classList.add('succes-hover');
+    text.classList.add('video-hover-text');
+    btnsContainer.classList.add('video-hover-btns-container');
+    saveBtn.classList.add('video-hover-save-btn');
+    linkBtn.classList.add('video-hover-link-btn');
+
+    videoContainer.append(div);
+    btnsContainer.append(saveBtn, linkBtn);
+    div.append(btnsContainer, img, text);
+
+    saveBtn.addEventListener('click', () => downloadGif(url));
+    linkBtn.addEventListener('click', () => getLink(url));
+}
+
+// Create hover over gif while uploading
+function videoHover() {
+    let div = document.createElement('div');
+    let img = document.createElement('div');
+    let text = document.createElement('p');
+
+    text.innerText = "Estamos subiendo tu GIFO";
+    
+    div.classList.add('video-hover');
+    img.classList.add('loader-hover');
+    text.classList.add('video-hover-text');
+
+    videoContainer.append(div);
+    div.append(img, text);
+}
+
+// --------------Geyt Link ---------------//
+
+function getLink(url) {
+    window.alert("El enlace del gifo creado es: " + url);
+}
+
+// ----------------------- DRAW mi gifo result on screen -------------------//
+function drawResultmyGif (url) {
+    let myGif = document.createElement('img');
     myGif.src = url;
-      link.textContent = "DESCARGAR";
-      link.setAttribute("download", 'mygif.gif');
-      link.href = url; 
-      link.classList.add('download_a');
-      myResults.appendChild(myGif);
-      stepsContainerGifos.appendChild(link);
-    //   myGif.style.display = 'none';
+    videoContainer.appendChild(myGif);
 }
 
 

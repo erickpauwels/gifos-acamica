@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    img{
+    #icon_mis_gifos{
         margin-top: 5px;
         margin-bottom: 7px;
     }
@@ -14,7 +14,7 @@
     }
     #mis_gifos_results {
         display: flex;
-        flex-flow: column;
+        flex-flow: row wrap;
         justify-content: center;
         align-items: center;
         width: 80%;
@@ -27,16 +27,17 @@
             }
         }
         .my_gif{
-            display: none;
+            display: flex;
             margin-bottom: 20px;
+            align-items: center;
             width: 250px;
             // height: 400px;
         }
         img {
-            display: none;
-            &:hover{
-                cursor: pointer;
-            }
+            display: flex;
+            
+            width: 80%;
+            margin: 10px;
         }
         
     }

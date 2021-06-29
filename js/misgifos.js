@@ -1,6 +1,8 @@
 
+let gifos = JSON.parse(localStorage.getItem('gifosList'));
 
-function drawResultmyGif() {
+
+/* function drawResultmyGif() {
     let div = document.createElement('div');
     let url_blob = localStorage.getItem("migifo");
     let myGif = document.createElement('img');
@@ -18,18 +20,40 @@ function drawResultmyGif() {
     }
     iconGifos.style.display = "block";   
 }
-
-drawResultmyGif();
-
-// -----------download function -------------------------- //
-
-/* iconGifos.addEventListener('click', () => {
-    const url = localStorage.getItem("migifo");
-    console.log(url);
-    let link = document.createElement("a");
-    link.textContent = "descargar";
-    link.setAttribute("download", 'mygif.gif');
-    link.href = url;
-    myResults.appendChild(link);
-})
  */
+// drawResultmyGif(); 
+console.log(gifos);
+
+function myGifos() {
+
+    if (gifos.length === 0) {
+        iconMyGifos.style.display = "block";
+        myGifosText.style.display = "block";
+    } else {
+        myGifosText.style.display = "none";
+        myResults.style.display = "flex";
+        myGifosResultsBox(gifos);
+    }
+}
+
+myGifos();
+
+function myGifosResultsBox(gifos) {
+    for (let i = 0; i < gifos.length; i++) {
+        let div = document.createElement("div");
+        let img = document.createElement("img");
+    
+        img.src = gifos[i].images.original.url;
+    
+        div.classList.add('gif-container');
+        div.appendChild(img);
+        myResults.appendChild(div);
+    
+        /* div.addEventListener('mouseenter', () => drawHoverGif(gifos, i, div));
+        div.addEventListener('mouseleave', () => removeHoverGif(div)); */
+    
+        /* if (gifos.length <= 12) {
+            seeMoreMyGifos.style.display = 'none';
+        } */
+    }
+}
