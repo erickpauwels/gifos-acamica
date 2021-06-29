@@ -4,7 +4,6 @@ async function getSuggestions() {
     let searchInput = document.getElementById('search_input').value;
     let resp = await fetch(`https://api.giphy.com/v1/gifs/search/tags?api_key=${apiKey}&q=${searchInput}&limit5&offset=0`);
     let data = await resp.json();
-    console.log(data);
     return data;
 }
 
@@ -42,12 +41,6 @@ function drawSuggestions() {
              });
         });
 })
-    // create hr 
-/* let hr = document.createElement('hr');
-    hr.classList.add('hr_suggestions');  
-    // create elements 
-    suggestionList.appendChild(hr);  */
-
     //close button event
 closeButton.addEventListener('click', () => {
     searchInput.innerHTML = '';
